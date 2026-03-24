@@ -30,8 +30,8 @@ This repository contains my daily practice of Data Structures and Algorithms.
 
 📅 Daily Progress
 
-Date| Problem| Difficulty
-24 Mar| Rearrange Array by Sign| Medium
+Date| Problem| Difficultly 
+24 Mar | Rearrange Array by Sign | Medium
 
 ---
 
