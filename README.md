@@ -30,13 +30,17 @@ This repository contains my daily practice of Data Structures and Algorithms.
 
 📅 Daily Progress
 
-Date| Problem| Difficultly 
+Date | Problem | Difficulty
+
 24 Mar | Rearrange Array by Sign | Medium
+25 Mar | Can Partition Grid | Medium
+25 Mar | Merge Two Sorted Lists | Easy
+
 
 ---
 
 🎯 Goal
 
-Solve 300+ DSA problems before placements
+Solve 500+ DSA problems before placements
 
 🔥 Consistency is the key 💪
