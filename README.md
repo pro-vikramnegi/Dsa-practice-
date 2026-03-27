@@ -1,15 +1,11 @@
-🚀 DSA Journey
+🚀 Data Structures & Algorithms
 
-This repository contains my consistent practice of Data Structures and Algorithms using C++.
-I solve problems regularly on LeetCode and Codeforces to strengthen problem-solving skills and prepare for software engineering roles.
+"Language" (https://img.shields.io/badge/Language-C++-blue)
+"Practice" (https://img.shields.io/badge/Practice-LeetCode%20%7C%20Codeforces-orange)
+"Status" (https://img.shields.io/badge/Status-Active-success)
 
----
-
-🛠️ Tech Stack
-
-- Language: C++
-- Platforms: LeetCode, Codeforces
-- Tools: VS Code, Git, GitHub
+This repository documents my consistent practice of Data Structures and Algorithms using C++.
+It includes problems solved from LeetCode and Codeforces, organized by difficulty and topic.
 
 ---
 
@@ -54,22 +50,19 @@ DSA-Journey/
 │
 ├── Codeforces/
 │   ├── 800_rating/
-│   │   ├── problem1.cpp
+│   │   ├── Problem_1.cpp
 │
-├── Arrays/
-│   ├── notes.md
-│
-├── Strings/
-│   ├── notes.md
-│
-├── Hashing/
-│   ├── notes.md
-│
-├── Recursion/
-│   ├── notes.md
-│
-├── LinkedList/
-│   ├── notes.md
+├── Topics/
+│   ├── Arrays/
+│   │   ├── notes.md
+│   ├── Strings/
+│   │   ├── notes.md
+│   ├── Hashing/
+│   │   ├── notes.md
+│   ├── Recursion/
+│   │   ├── notes.md
+│   ├── LinkedList/
+│   │   ├── notes.md
 │
 └── README.md
 
@@ -87,8 +80,8 @@ DSA-Journey/
 
 📈 Current Focus
 
-- Strengthening core DSA concepts
-- Solving problems consistently
+- Consistent problem solving
+- Strengthening core data structures
 - Practicing competitive programming
 
 ---
@@ -98,3 +91,19 @@ DSA-Journey/
 - Master Data Structures and Algorithms
 - Improve problem-solving ability
 - Perform well in coding interviews
+
+---
+
+📊 GitHub Stats
+
+"Stats" (https://github-readme-stats.vercel.app/api?username=__vikram21&show_icons=true)
+
+---
+
+⚡ Notes
+
+- Each problem includes approach and implementation
+- Solutions are written in clean and optimized C++
+- Repository is updated regularly
+
+---
