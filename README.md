@@ -1,8 +1,8 @@
 🚀 Data Structures & Algorithms
 
-"Language" (https://img.shields.io/badge/Language-C++-blue)
-"Practice" (https://img.shields.io/badge/Practice-LeetCode%20%7C%20Codeforces-orange)
-"Status" (https://img.shields.io/badge/Status-Active-success)
+![Language](https://img.shields.io/badge/Language-C++-blue)
+![Practice](https://img.shields.io/badge/Practice-LeetCode%20%7C%20Codeforces-orange)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
 This repository documents my consistent practice of Data Structures and Algorithms using C++.
 It includes problems solved from LeetCode and Codeforces, organized by difficulty and topic.
