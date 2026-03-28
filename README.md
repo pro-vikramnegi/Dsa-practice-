@@ -1,8 +1,9 @@
-🚀 Data Structures & Algorithms Journey
+# 🚀 Data Structures & Algorithms Journey
 
-"Language" (https://img.shields.io/badge/Language-C++-blue)
-"Practice" (https://img.shields.io/badge/Practice-LeetCode%20%7C%20Codeforces-orange)
-"Status" (https://img.shields.io/badge/Status-Active-success)
+![Language](https://img.shields.io/badge/Language-C++-blue)
+![Practice](https://img.shields.io/badge/Practice-LeetCode%20%7C%20Codeforces-orange)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
 
 ---
 
@@ -59,8 +60,6 @@ DSA-Journey/
 │   │   ├── Line_Trip.cpp
 │
 └── README.md
-
----
 
 📌 Topics Covered
 
