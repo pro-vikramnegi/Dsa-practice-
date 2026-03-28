@@ -29,7 +29,7 @@ It includes problems solved from LeetCode and Codeforces, organized by difficult
 | 26 Mar | Remove Nth Node From End of List | LeetCode | Medium |
 | 26 Mar | Remove Duplicates from Sorted List | LeetCode | Easy |
 | 27 Mar | Matrix Similarity After Cyclic Shifts | LeetCode | Easy |
-| 27 Mar | Problem (800 Rating) | Codeforces | - |
+| 27 Mar | Halloumi Boxes (800 Rating) | Codeforces | - |
 
 
 ---
