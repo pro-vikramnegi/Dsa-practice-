@@ -45,7 +45,7 @@ It includes problems solved from LeetCode and Codeforces, organized by difficult
     │   │   ├── Rearrange_Array_by_Sign.cpp
     │   │   ├── Can_Partition_Grid.cpp
     │   │   ├── Remove_Nth_Node_From_End.cpp
-    │   │   ├──     Matrix_Similarity_After_Cyclic_Shifts.cpp
+    │   │   ├── Matrix_Similarity_After_Cyclic_Shifts.cpp
     │   │   ├── Add_Two_Numbers.cpp
     │
     ├── Codeforces/
