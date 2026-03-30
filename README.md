@@ -35,6 +35,8 @@ It includes problems solved from LeetCode and Codeforces, organized by difficult
 | 29 Mar | Sort List                                 | LeetCode   | Medium     |
 | 29 Mar | Check if Strings Can be Made Equal (2839) | LeetCode   | Easy       |
 | 29 Mar | Check if Strings Can be Made Equal II (2840) | LeetCode | Medium     |
+| 30 Mar | Odd Even Linked List (328) | LeetCode | Medium |
+| 30 Mar | A. Game with Integers | Codeforces | 800 |
 
 📂 Repository Structure
 
@@ -58,6 +60,7 @@ It includes problems solved from LeetCode and Codeforces, organized by difficult
       - Add_Two_Numbers.cpp
       - Sort_List.cpp
       - Check if Strings Can be Made Equal II (2840)
+      - Odd_Even_Linked_List.cpp
         
   
   - Codeforces/
@@ -66,6 +69,7 @@ It includes problems solved from LeetCode and Codeforces, organized by difficult
       - Halloumi_Boxes.cpp
       - Line_Trip.cpp
       - A. Cover in Water
+      - Game_with_Integers.cpp
 
 - README.md
  
