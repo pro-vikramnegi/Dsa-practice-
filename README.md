@@ -21,25 +21,25 @@ It includes problems solved from LeetCode and Codeforces, organized by difficult
 
 | Date | Problem | Platform | Difficulty |
 |------|--------|----------|------------|
-| 24 Mar | Rearrange Array by Sign | LeetCode | Medium |
-| 25 Mar | Can Partition Grid | LeetCode | Medium |
-| 25 Mar | Merge Two Sorted Lists | LeetCode | Easy |
-| 26 Mar | Palindrome Linked List | LeetCode | Easy |
-| 26 Mar | Remove Nth Node From End of List | LeetCode | Medium |
-| 26 Mar | Remove Duplicates from Sorted List | LeetCode | Easy |
-| 27 Mar | Matrix Similarity After Cyclic Shifts | LeetCode | Easy |
-| 27 Mar | Halloumi Boxes | Codeforces | 800 |
-| 28 Mar | Add Two Numbers (Linked List) | LeetCode | Medium |
-| 28 Mar | A. Line Trip | Codeforces | 800 |
-| 29 Mar | A. Cover in Water | Codeforces | 800 |
-| 29 Mar | Sort List | LeetCode | Medium |
-| 29 Mar | Check if Strings Can be Made Equal (2839) | LeetCode | Easy |
-| 29 Mar | Check if Strings Can be Made Equal II (2840) |  LeetCode | Medium  |
-| 30 Mar | Odd Even Linked List (328) | LeetCode | Medium |
-| 30 Mar | A. Game with Integers | Codeforces | 800 |
-| 31 Mar | Spiral Matrix (54) | LeetCode | Medium |
-| 31 Mar | A. Jagged Swaps (1896A) | Codeforces | 800 |
-| 31 Mar | Intersection of Two LinkedList | LeetCode | Medium |
+| 24 Mar | [Rearrange Array by Sign](https://leetcode.com/problems/rearrange-array-elements-by-sign/) | LeetCode | Medium |
+| 25 Mar | [Can Partition Grid](https://leetcode.com/problems/can-partition-grid/) | LeetCode | Medium |
+| 25 Mar | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | LeetCode | Easy |
+| 26 Mar | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | LeetCode | Easy |
+| 26 Mar | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | LeetCode | Medium |
+| 26 Mar | [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | LeetCode | Easy |
+| 27 Mar | [Matrix Similarity After Cyclic Shifts](https://leetcode.com/problems/matrix-similarity-after-cyclic-shifts/) | LeetCode | Easy |
+| 27 Mar | [Halloumi Boxes](https://codeforces.com/problemset/problem/1760/A) | Codeforces | 800 |
+| 28 Mar | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | LeetCode | Medium |
+| 28 Mar | [A. Line Trip](https://codeforces.com/problemset/problem/1833/A) | Codeforces | 800 |
+| 29 Mar | [A. Cover in Water](https://codeforces.com/problemset/problem/1873/A) | Codeforces | 800 |
+| 29 Mar | [Sort List](https://leetcode.com/problems/sort-list/) | LeetCode | Medium |
+| 29 Mar | [Check if Strings Can be Made Equal (2839)](https://leetcode.com/problems/check-if-strings-can-be-made-equal/) | LeetCode | Easy |
+| 29 Mar | [Check if Strings Can be Made Equal II (2840)](https://leetcode.com/problems/check-if-strings-can-be-made-equal-ii/) | LeetCode | Medium |
+| 30 Mar | [Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) | LeetCode | Medium |
+| 30 Mar | [A. Game with Integers](https://codeforces.com/problemset/problem/1760/B) | Codeforces | 800 |
+| 31 Mar | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | LeetCode | Medium |
+| 31 Mar | [A. Jagged Swaps](https://codeforces.com/problemset/problem/1896/A) | Codeforces | 800 |
+| 31 Mar | [Intersection of Two Linked List](https://leetcode.com/problems/intersection-of-two-linked-lists/) | LeetCode | Medium |
 
 Repository Structure
 
