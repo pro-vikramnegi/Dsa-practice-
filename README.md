@@ -33,13 +33,13 @@ It includes problems solved from LeetCode and Codeforces, organized by difficult
 | 28 Mar | [A. Line Trip](https://codeforces.com/problemset/problem/1833/A) | Codeforces | 800 | Greedy |
 | 29 Mar | [A. Cover in Water](https://codeforces.com/problemset/problem/1873/A) | Codeforces | 800 | Greedy |
 | 29 Mar | [Sort List](https://leetcode.com/problems/sort-list/) | LeetCode | Medium | Linked List |
-| 29 Mar | [Check if Strings Can be Made Equal (2839)](https://leetcode.com/problems/check-if-strings-can-be-made-equal/) | LeetCode | Easy | String |
-| 29 Mar | [Check if Strings Can be Made Equal II (2840)](https://leetcode.com/problems/check-if-strings-can-be-made-equal-ii/) | LeetCode | Medium | String |
+| 29 Mar | [Check if Strings Can be Made Equal With Operations I](https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-i/) | LeetCode | Easy | String |
+| 29 Mar | [Check if Strings Can be Made Equal With Operations II](https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii/) | LeetCode | Medium | String |
 | 30 Mar | [Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) | LeetCode | Medium | Linked List |
-| 30 Mar | [A. Game with Integers](https://codeforces.com/problemset/problem/1760/B) | Codeforces | 800 | Math |
+| 30 Mar | [A. Game with Integers](https://codeforces.com/problemset/problem/1760/A) | Codeforces | 800 | Math |
 | 31 Mar | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | LeetCode | Medium | Matrix |
 | 31 Mar | [A. Jagged Swaps](https://codeforces.com/problemset/problem/1896/A) | Codeforces | 800 | Greedy |
-| 31 Mar | [Intersection of Two Linked List](https://leetcode.com/problems/intersection-of-two-linked-lists/) | LeetCode | Medium | Linked List |
+| 31 Mar | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | LeetCode | Medium | Linked List |
 
 Repository Structure
 
