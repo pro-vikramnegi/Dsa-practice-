@@ -1,27 +1,26 @@
-| Date | Topic | Problem | Platform | Difficulty | Status |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| 24 Mar | Array | [Rearrange Array by Sign](https://leetcode.com/problems/rearrange-array-elements-by-sign/) | LeetCode | Medium | ✅ Done |
-| 25 Mar | Matrix | [Can Partition Grid](https://leetcode.com/problems/can-partition-grid/) | LeetCode | Medium | ✅ Done |
-| 25 Mar | Linked List | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | LeetCode | Easy | ✅ Done |
-| 26 Mar | Linked List | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | LeetCode | Easy | ✅ Done |
-| 26 Mar | Linked List | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | LeetCode | Medium | ✅ Done |
-| 26 Mar | Linked List | [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | LeetCode | Easy | ✅ Done |
-| 27 Mar | Matrix | [Matrix Similarity After Cyclic Shifts](https://leetcode.com/problems/matrix-similarity-after-cyclic-shifts/) | LeetCode | Easy | ✅ Done |
-| 27 Mar | Greedy | [Halloumi Boxes](https://codeforces.com/problemset/problem/1903/A) | Codeforces | 800 | ✅ Done |
-| 28 Mar | Linked List | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | LeetCode | Medium | ✅ Done |
-| 28 Mar | Greedy | [A. Line Trip](https://codeforces.com/problemset/problem/1901/A) | Codeforces | 800 | ✅ Done |
-| 29 Mar | Greedy | [A. Cover in Water](https://codeforces.com/problemset/problem/1900/A) | Codeforces | 800 | ✅ Done |
-| 29 Mar | Linked List | [Sort List](https://leetcode.com/problems/sort-list/) | LeetCode | Medium | ✅ Done |
-| 29 Mar | String | [Check if Strings Can be Made Equal I](https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-i/) | LeetCode | Easy | ✅ Done |
-| 29 Mar | String | [Check if Strings Can be Made Equal II](https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii/) | LeetCode | Medium | ✅ Done |
-| 30 Mar | Linked List | [Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) | LeetCode | Medium | ✅ Done |
-| 30 Mar | Math | [A. Game with Integers](https://codeforces.com/problemset/problem/1899/A) | Codeforces | 800 | ✅ Done |
-| 31 Mar | Matrix | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | LeetCode | Medium | ✅ Done |
-| 31 Mar | Greedy | [A. Jagged Swaps](https://codeforces.com/problemset/problem/1896/A) | Codeforces | 800 | ✅ Done |
-| 31 Mar | Linked List | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | LeetCode | Medium | 🔁 Revision |
-| 01 Apr | C. Algo | [A. Doremy's Paint 3](https://codeforces.com/problemset/problem/1890/A) | Codeforces | 800 | ✅ Done |
-| 01 Apr | Matrix | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | LeetCode | Medium | ✅ Done |
-| 02 Apr | Linked List | [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | LeetCode | Medium | 🔁 Revision |
-| 02 Apr | Linked List | [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) | LeetCode | Medium | 🔁 Revision |
-| 02 Apr | Linked List | [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/) | LeetCode | Medium | 🔁 Revision |
-| 02 Apr | Greedy | [Don't Try to Count](https://codeforces.com/problemset/problem/1881/A) | Codeforces | 800 | 🔁 Revision |
+Date,Topic,Problem,Platform,Difficulty,Status
+24 Mar,Array,"[Rearrange Array by Sign](https://leetcode.com/problems/rearrange-array-elements-by-sign/)",LeetCode,Medium,Done
+25 Mar,Matrix,"[Can Partition Grid](https://leetcode.com/problems/can-partition-grid/)",LeetCode,Medium,Done
+25 Mar,Linked List,"[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)",LeetCode,Easy,Done
+26 Mar,Linked List,"[Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)",LeetCode,Easy,Done
+26 Mar,Linked List,"[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)",LeetCode,Medium,Done
+26 Mar,Linked List,"[Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)",LeetCode,Easy,Done
+27 Mar,Matrix,"[Matrix Similarity After Cyclic Shifts](https://leetcode.com/problems/matrix-similarity-after-cyclic-shifts/)",LeetCode,Easy,Done
+27 Mar,Greedy,"[Halloumi Boxes](https://codeforces.com/problemset/problem/1903/A)",Codeforces,800,Done
+28 Mar,Linked List,"[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)",LeetCode,Medium,Done
+28 Mar,Greedy,"[A. Line Trip](https://codeforces.com/problemset/problem/1901/A)",Codeforces,800,Done
+29 Mar,Greedy,"[A. Cover in Water](https://codeforces.com/problemset/problem/1900/A)",Codeforces,800,Done
+29 Mar,Linked List,"[Sort List](https://leetcode.com/problems/sort-list/)",LeetCode,Medium,Done
+29 Mar,String,"[Check if Strings Can be Made Equal I](https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-i/)",LeetCode,Easy,Done
+29 Mar,String,"[Check if Strings Can be Made Equal II](https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii/)",LeetCode,Medium,Done
+30 Mar,Linked List,"[Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/)",LeetCode,Medium,Done
+30 Mar,Math,"[A. Game with Integers](https://codeforces.com/problemset/problem/1899/A)",Codeforces,800,Done
+31 Mar,Matrix,"[Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)",LeetCode,Medium,Done
+31 Mar,Greedy,"[A. Jagged Swaps](https://codeforces.com/problemset/problem/1896/A)",Codeforces,800,Done
+31 Mar,Linked List,"[Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)",LeetCode,Medium,Revision
+01 Apr,C. Algo,"[A. Doremy's Paint 3](https://codeforces.com/problemset/problem/1890/A)",Codeforces,800,Done
+01 Apr,Matrix,"[Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)",LeetCode,Medium,Done
+02 Apr,Linked List,"[Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)",LeetCode,Medium,Revision
+02 Apr,Linked List,"[Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)",LeetCode,Medium,Revision
+02 Apr,Linked List,"[Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)",LeetCode,Medium,Revision
+02 Apr,Greedy,"[Don't Try to Count](https://codeforces.com/problemset/problem/1881/A)",Codeforces,800,Revision
