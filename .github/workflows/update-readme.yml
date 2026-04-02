@@ -1,29 +1,26 @@
 name: Update README
 
 on:
-  push:   # 🔥 अभी testing के लिए open रख
+  push:
+    paths:
+      - 'problems.csv'
 
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Repo clone
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      # 2. Python setup
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      # 3. Run script
       - name: Run script
         run: python generate_readme.py
 
-      # 4. Commit changes
-      - name: Commit & Push
+      - name: Commit changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
