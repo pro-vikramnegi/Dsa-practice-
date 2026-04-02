@@ -1,55 +1,61 @@
 import csv
 
-# 1. Read CSV (Yaqeen karlein ki aapki CSV mein 'Topic' aur 'Status' column hai)
+# 1. Read CSV
 rows = []
 try:
     with open("problems.csv", "r", encoding="utf-8") as file:
         reader = csv.reader(file)
-        header = next(reader)  # Header skip kar rahe hain
+        next(reader)  # header skip
         for row in reader:
-            if row: # Khali rows check karne ke liye
+            if row:
                 rows.append(row)
 except FileNotFoundError:
-    print("Error: problems.csv file nahi mili!")
+    print("Error: problems.csv nahi mili!")
     exit()
 
-# 2. Create Markdown Table (Naya Topic column add kiya hai)
+# 2. Create Table Structure (Sahi Column Order ke saath)
 table = "| Date | Topic | Problem | Platform | Difficulty | Status |\n"
 table += "| :--- | :--- | :--- | :--- | :--- | :--- |\n"
 
 for r in rows:
-    # CSV order: Date, Problem, Platform, Difficulty, Topic, Status
-    if len(r) >= 6:
-        # Check status to add emoji for better look
-        status = r[5]
-        if "Done" in status or "Solved" in status:
-            status = "✅ Done"
-        elif "Revision" in status:
-            status = "🔁 Revision"
-            
-        table += f"| {r[0]} | {r[4]} | {r[1]} | {r[2]} | {r[3]} | {status} |\n"
+    # CSV Order: Date(0), Topic(1), Problem(2), Platform(3), Difficulty(4), Status(5)
+    date = r[0]
+    topic = r[1]
+    problem = r[2]
+    platform = r[3]
+    difficulty = r[4]
+    status_raw = r[5].strip()
 
-# 3. Read existing README
+    # Status Emoji Logic
+    if "Done" in status_raw or "Solved" in status_raw:
+        status = "✅ Done"
+    elif "Revision" in status_raw:
+        status = "🔁 Revision"
+    else:
+        status = status_raw
+
+    # Table mein columns sahi sequence mein set kiye hain
+    table += f"| {date} | {topic} | {problem} | {platform} | {difficulty} | {status} |\n"
+
+# 3. Read README
 try:
     with open("README.md", "r", encoding="utf-8") as f:
         content = f.read()
 except FileNotFoundError:
-    print("Error: README.md file nahi mili!")
+    print("Error: README.md nahi mili!")
     exit()
 
-# 4. Find table section markers
-# Yaad rakhein ki README mein 'Repository Structure' wali heading honi chahiye
+# 4. Markers dhundna
 start = content.find("| Date")
-end = content.find("## Repository Structure") # Heading ka pura naam match karein
+# Check karein ki README mein exact yehi heading hai ya nahi
+end = content.find("## Repository Structure") 
 
 if start == -1 or end == -1:
-    print("Markers (| Date ya Repository Structure) nahi mile! Check README markers.")
+    print("Markers nahi mile! Check karein README mein '| Date' aur '## Repository Structure' hai.")
     exit()
 
-# 5. Replace table
+# 5. Replace and Write
 new_content = content[:start] + table + "\n" + content[end:]
-
-# 6. Write back to README
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(new_content)
 
