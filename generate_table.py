@@ -1,20 +1,24 @@
 import csv
 
+# =======================
+# 1. Read CSV
+# =======================
 rows = []
-
-# Read CSV
 with open("problems.csv", "r", encoding="utf-8") as file:
     reader = csv.DictReader(file)
     for row in reader:
         rows.append(row)
 
-# Create Table
+# =======================
+# 2. Generate Table
+# =======================
 table = "| Date | Problem | Platform | Difficulty | Topic | Status |\n"
 table += "| :--- | :--- | :--- | :--- | :--- | :--- |\n"
 
 for r in rows:
     status_raw = r["Status"].strip().lower()
 
+    # Emoji logic
     if status_raw in ["done", "solved"]:
         status = "✅ Done"
     elif status_raw == "revision":
@@ -26,17 +30,24 @@ for r in rows:
 
     table += f"| {r['Date']} | {r['Problem']} | {r['Platform']} | {r['Difficulty']} | {r['Topic']} | {status} |\n"
 
-# Update README
+# =======================
+# 3. Update README (NO END MARKER NEEDED)
+# =======================
 with open("README.md", "r", encoding="utf-8") as f:
     content = f.read()
 
-start = content.find("| Date")
-end = content.find("## Repository Structure")
+start_marker = "| Date"
 
-if start != -1 and end != -1:
-    new_content = content[:start] + table + "\n" + content[end:]
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(new_content)
-    print("README updated successfully!")
+start = content.find(start_marker)
+
+if start != -1:
+    new_content = content[:start] + table
 else:
-    print("Markers not found!")
+    # agar table nahi mila toh end me add kar de
+    new_content = content + "\n\n" + table
+
+# write back
+with open("README.md", "w", encoding="utf-8") as f:
+    f.write(new_content)
+
+print("✅ README updated successfully!")
