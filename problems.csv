@@ -24,3 +24,6 @@ Date,Problem,Platform,Difficulty,Topic,Status
 02 Apr,"[Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)",LeetCode,Medium,Linked_List,Revision
 02 Apr,"[Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)",LeetCode,Medium,Linked_List,Revision
 02 Apr,"[Don't Try to Count](https://codeforces.com/problemset/problem/1881/A)",Codeforces,800,Greedy,Revision
+03 Apr,"[A. How Much Does Daytona Cost?](https://codeforces.com/problemset/problem/1878/A)",Codeforces,800,Greedy,Done
+03 Apr,"[A. Goals of Victory](https://codeforces.com/problemset/problem/1877/A)",Codeforces,800,Math,Done
+03 Apr,"[Merge Intervals](https://leetcode.com/problems/merge-intervals/)",LeetCode,Medium,Array,Done
