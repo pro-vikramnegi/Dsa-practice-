@@ -48,36 +48,7 @@ It includes problems solved from LeetCode and Codeforces, organized by difficult
 | 03 Apr | [A. How Much Does Daytona Cost?](https://codeforces.com/problemset/problem/1878/A) | Codeforces | 800 | Greedy | ✅ Done |
 | 03 Apr | [A. Goals of Victory](https://codeforces.com/problemset/problem/1877/A) | Codeforces | 800 | Math | ✅ Done |
 | 03 Apr | [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | LeetCode | Medium | Array | ✅ Done |
-
----
-
----
-
-### 📊 Progress Tracker
-
-| Goal | Target | Current Status |
-| :--- | :--- | :--- |
-| **Codeforces Rating** | **1200+** | 🟡 800 |
-| **Total Solved** | **800 - 1000** | 📈 28 (LeetCode + CF) |
-| **GitHub Streak** | **Daily Push** | [![Streak](https://github-readme-streak-stats.herokuapp.com/?user=__vikram21&theme=tokyonight)](https://git.io/streak-stats) |
-
----
-
-### 🎯 Weekly Goals & Topics
-
-- [x] **Arrays & Matrices** (Mastering basic patterns)
-- [x] **Linked List** (Implementation & Manipulation)
-- [ ] **Greedy Algorithms** (Current Focus: CF 800-900)
-- [ ] **String Search & Hashing**
-- [ ] **Recursion & Backtracking**
-- [ ] **Binary Search** (Targeting Medium problems)
-
-
-## 🎯 Target Milestones
-
-| Milestone            | Objective              | Current Status                     |
-|---------------------|------------------------|------------------------------------|
-| Codeforces Pupil    | 1200+ Rating          | 🟡 800 (Grinding 800–1000)         |
-| LeetCode Specialist | 150+ Mediums          | 📈 Building Intuition              |
-| DSA Mastery         | Striver's A2Z Sheet   | 🏗️ In Progress                     |
-| Contest Ready       | 2+ / Week             | 🔥 Weekly Active                   |
+| 05 Apr | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | LeetCode | Easy | String | ✅ Done |
+| 05 Apr | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/) | LeetCode | Medium | String | ✅ Done |
+| 05 Apr | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | LeetCode | Medium | Array | ✅ Done |
+| 05 Apr | [C. Target Practice](https://codeforces.com/problemset/problem/1873/C) | Codeforces | 800 | Matrix | ✅ Done |
