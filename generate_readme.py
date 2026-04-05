@@ -5,10 +5,12 @@ import os
 from datetime import datetime, timedelta, date
 from collections import defaultdict
 
+# CONFIG
 LEETCODE_USER = "__vikram21"
 CF_USER       = "__vikram21"
 GITHUB_USER   = "vikramnegi21"
 
+# DATE PARSE
 def parse_date(raw):
     raw = raw.strip()
     if not raw:
@@ -23,6 +25,7 @@ def parse_date(raw):
             pass
     return None
 
+# LOAD CSV
 def load_problems():
     rows = []
     with open("problems.csv", newline="", encoding="utf-8") as f:
@@ -33,6 +36,7 @@ def load_problems():
                 rows.append(row)
     return rows
 
+# STREAK
 def calc_streak(problems):
     dates = {p["parsed_date"] for p in problems}
     cur = 0
@@ -42,6 +46,7 @@ def calc_streak(problems):
         d -= timedelta(days=1)
     return cur
 
+# GITHUB CONTRIBUTIONS
 def github_contributions():
     token = os.getenv("GH_TOKEN")
     if not token:
@@ -67,6 +72,7 @@ def github_contributions():
     except:
         return 0
 
+# LEETCODE
 def leetcode_stats():
     try:
         res = requests.get(f"https://leetcode-stats-api.herokuapp.com/{LEETCODE_USER}")
@@ -74,6 +80,7 @@ def leetcode_stats():
     except:
         return 0
 
+# CODEFORCES
 def cf_rating():
     try:
         res = requests.get(f"https://codeforces.com/api/user.info?handles={CF_USER}")
@@ -81,6 +88,7 @@ def cf_rating():
     except:
         return 0
 
+# HEATMAP
 def generate_heatmap(problems):
     date_counts = defaultdict(int)
     for p in problems:
@@ -103,6 +111,7 @@ def generate_heatmap(problems):
 
     return f'<svg width="300" height="120">{rects}</svg>'
 
+# BUILD README
 def build_readme(problems):
     total = len(problems)
     streak = calc_streak(problems)
@@ -144,6 +153,7 @@ _Last updated: {datetime.now()}_
         for p in problems
     )
 
+# MAIN
 if __name__ == "__main__":
     problems = load_problems()
     readme = build_readme(problems)
