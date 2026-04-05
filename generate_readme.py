@@ -5,17 +5,19 @@ import os
 from datetime import datetime, timedelta, date
 from collections import defaultdict
 
-# CONFIG
+# --- CONFIG ---
 LEETCODE_USER = "__vikram21"
 CF_USER       = "__vikram21"
 GITHUB_USER   = "vikramnegi21"
 
-# DATE PARSE
+# --- DATE PARSE ---
 def parse_date(raw):
     raw = raw.strip()
     if not raw:
         return None
     today = date.today()
+    # CSV format assumed: "27 Mar"
+    # Hum current year add karke parse karenge
     for year in [today.year, today.year - 1]:
         try:
             d = datetime.strptime(f"{raw} {year}", "%d %b %Y").date()
@@ -25,31 +27,43 @@ def parse_date(raw):
             pass
     return None
 
-# LOAD CSV
+# --- LOAD CSV ---
 def load_problems():
     rows = []
+    if not os.path.exists("problems.csv"):
+        print("❌ ERROR: problems.csv file nahi mili!")
+        return rows
+        
     with open("problems.csv", newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
+        reader = csv.DictReader(f)
+        for row in reader:
             d = parse_date(row.get("Date", ""))
             if d:
                 row["parsed_date"] = d
                 rows.append(row)
     return rows
 
-# STREAK
+# --- STREAK CALCULATION ---
 def calc_streak(problems):
     dates = {p["parsed_date"] for p in problems}
+    if not dates:
+        return 0
     cur = 0
     d = date.today()
+    # Agar aaj problem nahi ki, toh kal se check karo (grace period)
+    if d not in dates:
+        d -= timedelta(days=1)
+        
     while d in dates:
         cur += 1
         d -= timedelta(days=1)
     return cur
 
-# GITHUB CONTRIBUTIONS
+# --- GITHUB STATS ---
 def github_contributions():
     token = os.getenv("GH_TOKEN")
     if not token:
+        print("⚠️ Warning: GH_TOKEN nahi mila, GitHub stats 0 aayenge.")
         return 0
 
     query = f"""
@@ -63,7 +77,6 @@ def github_contributions():
       }}
     }}
     """
-
     headers = {"Authorization": f"Bearer {token}"}
     try:
         res = requests.post("https://api.github.com/graphql",
@@ -72,7 +85,7 @@ def github_contributions():
     except:
         return 0
 
-# LEETCODE
+# --- LEETCODE STATS ---
 def leetcode_stats():
     try:
         res = requests.get(f"https://leetcode-stats-api.herokuapp.com/{LEETCODE_USER}")
@@ -80,7 +93,7 @@ def leetcode_stats():
     except:
         return 0
 
-# CODEFORCES
+# --- CODEFORCES RATING ---
 def cf_rating():
     try:
         res = requests.get(f"https://codeforces.com/api/user.info?handles={CF_USER}")
@@ -88,7 +101,7 @@ def cf_rating():
     except:
         return 0
 
-# HEATMAP
+# --- HEATMAP GENERATOR ---
 def generate_heatmap(problems):
     date_counts = defaultdict(int)
     for p in problems:
@@ -104,32 +117,32 @@ def generate_heatmap(problems):
         cnt = date_counts.get(d, 0)
         x = (i // 7) * 15
         y = (i % 7) * 15
+        # Green color if solved, else dark grey
         color = "#39d353" if cnt > 0 else "#161b22"
-        rects += f'<rect x="{x}" y="{y}" width="10" height="10" fill="{color}"/>'
+        rects += f'<rect x="{x}" y="{y}" width="10" height="10" fill="{color}" rx="2" ry="2"/>'
         d += timedelta(days=1)
         i += 1
 
-    return f'<svg width="300" height="120">{rects}</svg>'
+    return f'<svg width="450" height="110" xmlns="http://www.w3.org/2000/svg">{rects}</svg>'
 
-# BUILD README
+# --- BUILD README ---
 def build_readme(problems):
-    print("FORCE UPDATE", datetime.now())   # 🔥 force change
-
     total = len(problems)
     streak = calc_streak(problems)
-
     lc = leetcode_stats()
     cf = cf_rating()
     gh = github_contributions()
-
-    heatmap = generate_heatmap(problems)
-
+    
+    # SVG Heatmap save karna
+    heatmap_svg = generate_heatmap(problems)
     with open("heatmap.svg", "w") as f:
-        f.write(heatmap)
+        f.write(heatmap_svg)
 
-    return f"""# 🚀 DSA Dashboard
+    now_ist = (datetime.utcnow() + timedelta(hours=5, minutes=30)).strftime("%d %b %Y, %I:%M %p")
 
-_Last updated: {datetime.now()}_
+    content = f"""# 🚀 DSA Dashboard
+
+> Last updated: {now_ist} (IST)
 
 ## 👨‍💻 Stats
 
@@ -137,30 +150,41 @@ _Last updated: {datetime.now()}_
 - ⚔️ Codeforces Rating: **{cf}**
 - 🟩 GitHub Contributions: **{gh}**
 - 🔥 Current Streak: **{streak} days**
-- 📊 Total Problems: **{total}**
+- 📊 Total Problems Logged: **{total}**
 
 ---
 
-## 📊 Activity Heatmap
+## 📊 Last 90 Days Activity
 ![Heatmap](heatmap.svg)
 
 ---
 
-## 📁 Problem Log
+## 📁 Recent Problem Log
 
 | Date | Problem | Platform |
 |------|--------|----------|
-""" + "\n".join(
-        f"| {p['Date']} | {p['Problem']} | {p['Platform']} |"
-        for p in problems
-    )
+"""
+    # Sirf top 10 recent problems dikhane ke liye
+    recent_problems = sorted(problems, key=lambda x: x['parsed_date'], reverse=True)[:10]
+    for p in recent_problems:
+        content += f"| {p['Date']} | {p['Problem']} | {p['Platform']} |\n"
+    
+    return content
 
-# MAIN
+# --- MAIN EXECUTION ---
 if __name__ == "__main__":
+    print("--- 🛠️ Starting README Update Script ---")
+    
     problems = load_problems()
-    readme = build_readme(problems)
+    print(f"DEBUG: CSV se total {len(problems)} problems mili hain.")
+    
+    if len(problems) == 0:
+        print("⚠️ WARNING: 0 problems mili! Apni CSV mein 'Date' format check karein (Ex: 27 Mar).")
 
-    with open("README.md", "w") as f:
-        f.write(readme)
+    readme_content = build_readme(problems)
 
-    print("✅ README updated")
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(readme_content)
+
+    print("✅ SUCCESS: README.md aur heatmap.svg update ho gaye hain.")
+    
