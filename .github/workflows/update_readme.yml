@@ -6,7 +6,7 @@ on:
       - "problems.csv"
   workflow_dispatch:
   schedule:
-    - cron: "0 5 * * *"   # Rozana 10:30 AM IST par chalega
+    - cron: "0 5 * * *"   # Rozana 10:30 AM IST
 
 jobs:
   update-readme:
@@ -38,9 +38,9 @@ jobs:
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Sirf wahi files add kar rahe hain jo script generate karti hai
+          # Dono files ko add kar rahe hain
           git add README.md heatmap.svg
           
-          # Agar kuch change hua hai toh hi commit karega
-          git diff --staged --quiet || (git commit -m "📊 Auto-update README · $(date +'%d %b %Y')" && git push)
+          # Check changes and push
+          git diff --staged --quiet || (git commit -m "📊 Dashboard Auto-Update" && git push)
           
