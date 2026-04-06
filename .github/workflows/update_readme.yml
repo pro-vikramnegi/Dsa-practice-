@@ -1,46 +1,38 @@
-name: 📊 Update README
+name: Update DSA Dashboard
 
 on:
   push:
     paths:
       - "problems.csv"
-  workflow_dispatch:
   schedule:
-    - cron: "0 5 * * *"   # Rozana 10:30 AM IST
+    - cron: "0 18 * * *"   # 11:30 PM IST daily
+  workflow_dispatch:
 
 jobs:
-  update-readme:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
-      - name: ⬇️ Checkout repo
+      - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: 🐍 Set up Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.11"
 
-      - name: 🔧 Install dependencies
+      - name: Install dependencies
         run: pip install requests
 
-      - name: 🔧 Run generator
+      - name: Generate README + heatmap
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python generate_readme.py
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python generate_table.py
 
-      - name: 📤 Commit & push changes
+      - name: Commit and push
         run: |
-          git config --global user.name  "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Dono files ko add kar rahe hain
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md heatmap.svg
-          
-          # Check changes and push
-          git diff --staged --quiet || (git commit -m "📊 Dashboard Auto-Update" && git push)
-          
+          git diff --cached --quiet || git commit -m "chore: auto-update dashboard $(date +'%d %b %Y')"
+          git push
