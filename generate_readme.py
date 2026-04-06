@@ -1,23 +1,13 @@
 #!/usr/bin/env python3
-"""
-generate_readme.py  —  DSA Dashboard README generator
-Fixes:  year-bug, streak logic, table format, heatmap intensity
-Adds:   best-streak, weekly digest, per-platform split,
-        heatmap color-intensity, emoji difficulty bars,
-        last-7-days problems section, auto-badge shields
-"""
-
 import csv
 import requests
 import os
 from datetime import datetime, timedelta, date
 from collections import defaultdict, Counter
 
-# ─────────────────────────────────────────────
 LEETCODE_USER = "__vikram21"
 CF_USER       = "__vikram21"
 GITHUB_USER   = "vikramnegi21"
-# ─────────────────────────────────────────────
 
 
 def load_problems():
@@ -28,7 +18,7 @@ def load_problems():
     return rows
 
 
-def parse_date(date_str: str) -> date | None:
+def parse_date(date_str):
     today = date.today()
     for year in [today.year, today.year - 1]:
         try:
@@ -56,7 +46,7 @@ def calc_streaks(problems):
         d -= timedelta(days=1)
 
     best = 0
-    run  = 0
+    run = 0
     prev = None
     for d in sorted(dates):
         if prev and (d - prev).days == 1:
@@ -86,9 +76,9 @@ def platform_breakdown(problems):
 
 def diff_bar(easy, medium, hard):
     total = easy + medium + hard or 1
-    e_pct = round((easy   / total) * 10)
+    e_pct = round((easy / total) * 10)
     m_pct = round((medium / total) * 10)
-    h_pct = round((hard   / total) * 10)
+    h_pct = round((hard / total) * 10)
     return "🟢" * e_pct + "🟡" * m_pct + "🔴" * h_pct
 
 
@@ -99,20 +89,20 @@ def generate_heatmap(problems):
         if d:
             counter[d] += 1
 
-    today  = date.today()
-    start  = today - timedelta(days=90)
+    today = date.today()
+    start = today - timedelta(days=90)
     palette = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
 
     rects = []
     d = start
     i = 0
     while d <= today:
-        cnt   = counter.get(d, 0)
+        cnt = counter.get(d, 0)
         level = min(cnt, 4)
-        x     = (i // 7) * 13
-        y     = (i %  7) * 13
+        x = (i // 7) * 13
+        y = (i % 7) * 13
         color = palette[level]
-        tip   = d.strftime("%b %d")
+        tip = d.strftime("%b %d")
         rects.append(
             f'<rect x="{x}" y="{y}" width="10" height="10" '
             f'fill="{color}" rx="2"><title>{tip}: {cnt}</title></rect>'
@@ -123,7 +113,8 @@ def generate_heatmap(problems):
     width = ((i // 7) + 1) * 13
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'width="{width}" height="104" style="background:#0d1117;padding:4px;border-radius:6px">'
+        f'width="{width}" height="104" '
+        f'style="background:#0d1117;padding:4px;border-radius:6px">'
         + "".join(rects)
         + "</svg>"
     )
@@ -187,54 +178,54 @@ def github_contributions():
         )
         return (
             r.json()["data"]["user"]
-             ["contributionsCollection"]["contributionCalendar"]
-             ["totalContributions"]
+            ["contributionsCollection"]["contributionCalendar"]
+            ["totalContributions"]
         )
     except Exception:
         return 0
 
 
 def build_readme(problems):
-    total            = len(problems)
+    total = len(problems)
     cur_streak, best = calc_streaks(problems)
-    lc               = leetcode_stats()
-    cf               = cf_info()
-    gh               = github_contributions()
-    topics           = Counter(p.get("Topic",      "Other")   for p in problems)
-    difficulty       = Counter(p.get("Difficulty", "Unknown") for p in problems)
-    platforms        = platform_breakdown(problems)
-    recent           = weekly_digest(problems)
-    consistency      = round((cur_streak / 30) * 100, 1)
+    lc = leetcode_stats()
+    cf = cf_info()
+    gh = github_contributions()
+    topics = Counter(p.get("Topic", "Other") for p in problems)
+    difficulty = Counter(p.get("Difficulty", "Unknown") for p in problems)
+    platforms = platform_breakdown(problems)
+    recent = weekly_digest(problems)
+    consistency = round((cur_streak / 30) * 100, 1)
 
     generate_heatmap(problems)
 
-    easy   = difficulty.get("Easy",   0)
+    easy = difficulty.get("Easy", 0)
     medium = difficulty.get("Medium", 0)
-    hard   = difficulty.get("Hard",   0)
-    bar    = diff_bar(easy, medium, hard)
+    hard = difficulty.get("Hard", 0)
+    bar = diff_bar(easy, medium, hard)
 
-    badges = " ".join([
+    badges = (
         f"
 
 ![LeetCode](https://img.shields.io/badge/LeetCode-{lc['total']}-FFA116?logo=leetcode&logoColor=white)
 
-",
+ "
         f"
 
 ![CF](https://img.shields.io/badge/Codeforces-{cf['rating']}-1F8ACB?logo=codeforces&logoColor=white)
 
-",
+ "
         f"
 
 ![Streak](https://img.shields.io/badge/Streak-{cur_streak}%20days-39d353?logo=github)
 
-",
+ "
         f"
 
 ![Total](https://img.shields.io/badge/Problems-{total}-blueviolet)
 
-",
-    ])
+"
+    )
 
     table_rows = "\n".join(
         f"| {p.get('Date','—')} | {p.get('Problem','—')} "
@@ -249,21 +240,26 @@ def build_readme(problems):
             f"| {p.get('Platform','—')} | {p.get('Difficulty','—')} |"
             for d, p in recent
         )
-        recent_section = f"""## 📅 Last 7 Days  ({len(recent)} problems)
-| Date | Problem | Platform | Difficulty |
-|------|---------|----------|------------|
-{recent_rows}
-
----"""
+        recent_section = (
+            f"## 📅 Last 7 Days  ({len(recent)} problems)\n"
+            f"| Date | Problem | Platform | Difficulty |\n"
+            f"|------|---------|----------|------------|\n"
+            f"{recent_rows}\n\n---"
+        )
     else:
         recent_section = "## 📅 Last 7 Days\n_No problems logged this week yet._\n\n---"
 
     topic_badges = "  ".join(
         f"
 
-![{k}](https://img.shields.io/badge/{k.replace(' ','%20')
+![{k}](https://img.shields.io/badge/{k.replace(' ', '%20')
 
 }-{v}-0a84ff)"
+        for k, v in topics.most_common()
+    )
+
+    topic_rows = "".join(
+        f"| {k} | {v} |\n"
         for k, v in topics.most_common()
     )
 
@@ -272,7 +268,7 @@ def build_readme(problems):
         for plat, cnt in platforms.most_common()
     )
 
-    return f"""# 🚀 DSA Forge — {GITHUB_USER}
+    readme = f"""# 🚀 DSA Forge — {GITHUB_USER}
 
 > _Last updated: {datetime.now().strftime("%d %b %Y, %H:%M")} UTC_
 
@@ -298,9 +294,9 @@ def build_readme(problems):
 ## 📊 Difficulty Breakdown
 | Level | Count |
 |-------|-------|
-| 🟢 Easy   | {easy}   |
+| 🟢 Easy | {easy} |
 | 🟡 Medium | {medium} |
-| 🔴 Hard   | {hard}   |
+| 🔴 Hard | {hard} |
 
 {bar}
 
@@ -320,8 +316,6 @@ def build_readme(problems):
 
 ![Heatmap](heatmap.svg)
 
-
-
 ---
 
 {recent_section}
@@ -331,7 +325,7 @@ def build_readme(problems):
 
 | Topic | Count |
 |-------|-------|
-{"".join(f"| {k} | {v} |" + chr(10) for k, v in topics.most_common())}
+{topic_rows}
 ---
 
 ## 🖥️ Platform Split
@@ -341,15 +335,16 @@ def build_readme(problems):
 
 ---
 
-## 📁 All Problems  ({total} total)
+## 📁 All Problems ({total} total)
 | Date | Problem | Platform | Topic | Difficulty | Link |
 |------|---------|----------|-------|------------|------|
 {table_rows}
 """
+    return readme
 
 
 if __name__ == "__main__":
-    data   = load_problems()
+    data = load_problems()
     readme = build_readme(data)
 
     with open("README.md", "w", encoding="utf-8") as f:
