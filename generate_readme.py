@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_table.py  —  DSA Dashboard README generator
+generate_readme.py  —  DSA Dashboard README generator
 Fixes:  year-bug, streak logic, table format, heatmap intensity
 Adds:   best-streak, weekly digest, per-platform split,
         heatmap color-intensity, emoji difficulty bars,
@@ -20,9 +20,6 @@ GITHUB_USER   = "vikramnegi21"
 # ─────────────────────────────────────────────
 
 
-# ══════════════════════════════════════════════
-# 1. CSV LOADER
-# ══════════════════════════════════════════════
 def load_problems():
     rows = []
     with open("problems.csv", newline="", encoding="utf-8") as f:
@@ -31,14 +28,7 @@ def load_problems():
     return rows
 
 
-# ══════════════════════════════════════════════
-# 2. DATE PARSER  (FIX: multi-year safe)
-# ══════════════════════════════════════════════
 def parse_date(date_str: str) -> date | None:
-    """
-    Tries current year first, then previous year.
-    Rejects any date in the future (handles Dec→Jan rollover).
-    """
     today = date.today()
     for year in [today.year, today.year - 1]:
         try:
@@ -50,11 +40,7 @@ def parse_date(date_str: str) -> date | None:
     return None
 
 
-# ══════════════════════════════════════════════
-# 3. STREAK  (FIX: doesn't reset if you skip today)
-# ══════════════════════════════════════════════
 def calc_streaks(problems):
-    """Returns (current_streak, best_streak)."""
     dates = set()
     for p in problems:
         d = parse_date(p["Date"])
@@ -62,8 +48,6 @@ def calc_streaks(problems):
             dates.add(d)
 
     today = date.today()
-
-    # current streak: start from today, fall back to yesterday
     cur = 0
     start = today if today in dates else today - timedelta(days=1)
     d = start
@@ -71,7 +55,6 @@ def calc_streaks(problems):
         cur += 1
         d -= timedelta(days=1)
 
-    # best streak: scan all sorted dates
     best = 0
     run  = 0
     prev = None
@@ -86,11 +69,7 @@ def calc_streaks(problems):
     return cur, best
 
 
-# ══════════════════════════════════════════════
-# 4. WEEKLY DIGEST
-# ══════════════════════════════════════════════
 def weekly_digest(problems):
-    """Returns list of problems solved in the last 7 days."""
     cutoff = date.today() - timedelta(days=7)
     recent = []
     for p in problems:
@@ -101,31 +80,18 @@ def weekly_digest(problems):
     return recent
 
 
-# ══════════════════════════════════════════════
-# 5. PLATFORM BREAKDOWN
-# ══════════════════════════════════════════════
 def platform_breakdown(problems):
     return Counter(p.get("Platform", "Unknown") for p in problems)
 
 
-# ══════════════════════════════════════════════
-# 6. DIFFICULTY BAR  (emoji visual)
-# ══════════════════════════════════════════════
 def diff_bar(easy, medium, hard):
     total = easy + medium + hard or 1
     e_pct = round((easy   / total) * 10)
     m_pct = round((medium / total) * 10)
     h_pct = round((hard   / total) * 10)
-    return (
-        "🟢" * e_pct +
-        "🟡" * m_pct +
-        "🔴" * h_pct
-    )
+    return "🟢" * e_pct + "🟡" * m_pct + "🔴" * h_pct
 
 
-# ══════════════════════════════════════════════
-# 7. HEATMAP SVG  (FIX: intensity levels)
-# ══════════════════════════════════════════════
 def generate_heatmap(problems):
     counter = defaultdict(int)
     for p in problems:
@@ -133,18 +99,16 @@ def generate_heatmap(problems):
         if d:
             counter[d] += 1
 
-    today = date.today()
-    start = today - timedelta(days=90)
-
-    # intensity palette (GitHub-style 5 levels)
+    today  = date.today()
+    start  = today - timedelta(days=90)
     palette = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
 
     rects = []
-    d     = start
-    i     = 0
+    d = start
+    i = 0
     while d <= today:
         cnt   = counter.get(d, 0)
-        level = min(cnt, 4)          # 0-4
+        level = min(cnt, 4)
         x     = (i // 7) * 13
         y     = (i %  7) * 13
         color = palette[level]
@@ -165,12 +129,8 @@ def generate_heatmap(problems):
     )
     with open("heatmap.svg", "w") as f:
         f.write(svg)
-    return svg
 
 
-# ══════════════════════════════════════════════
-# 8. EXTERNAL API CALLS
-# ══════════════════════════════════════════════
 def leetcode_stats():
     try:
         r = requests.get(
@@ -197,9 +157,9 @@ def cf_info():
         )
         u = r.json()["result"][0]
         return {
-            "rating":    u.get("rating",    0),
+            "rating":     u.get("rating",    0),
             "max_rating": u.get("maxRating", 0),
-            "rank":      u.get("rank",      "unrated"),
+            "rank":       u.get("rank",      "unrated"),
         }
     except Exception:
         return {"rating": 0, "max_rating": 0, "rank": "unrated"}
@@ -234,48 +194,55 @@ def github_contributions():
         return 0
 
 
-# ══════════════════════════════════════════════
-# 9. README BUILDER
-# ══════════════════════════════════════════════
 def build_readme(problems):
-    print(f"[generate_table.py] Building README — {datetime.now()}")
+    total            = len(problems)
+    cur_streak, best = calc_streaks(problems)
+    lc               = leetcode_stats()
+    cf               = cf_info()
+    gh               = github_contributions()
+    topics           = Counter(p.get("Topic",      "Other")   for p in problems)
+    difficulty       = Counter(p.get("Difficulty", "Unknown") for p in problems)
+    platforms        = platform_breakdown(problems)
+    recent           = weekly_digest(problems)
+    consistency      = round((cur_streak / 30) * 100, 1)
 
-    # ── gather data ──
-    total              = len(problems)
-    cur_streak, best   = calc_streaks(problems)
-    lc                 = leetcode_stats()
-    cf                 = cf_info()
-    gh                 = github_contributions()
-    topics             = Counter(p.get("Topic",      "Other")    for p in problems)
-    difficulty         = Counter(p.get("Difficulty", "Unknown")  for p in problems)
-    platforms          = platform_breakdown(problems)
-    recent             = weekly_digest(problems)
-    consistency        = round((cur_streak / 30) * 100, 1)
-
-    generate_heatmap(problems)   # writes heatmap.svg
+    generate_heatmap(problems)
 
     easy   = difficulty.get("Easy",   0)
     medium = difficulty.get("Medium", 0)
     hard   = difficulty.get("Hard",   0)
     bar    = diff_bar(easy, medium, hard)
 
-    # ── shields.io badges ──
     badges = " ".join([
-        f"![LeetCode](https://img.shields.io/badge/LeetCode-{lc['total']}-FFA116?logo=leetcode&logoColor=white)",
-        f"![CF](https://img.shields.io/badge/Codeforces-{cf['rating']}-1F8ACB?logo=codeforces&logoColor=white)",
-        f"![Streak](https://img.shields.io/badge/Streak-{cur_streak}%20days-39d353?logo=github)",
-        f"![Total](https://img.shields.io/badge/Problems-{total}-blueviolet)",
+        f"
+
+![LeetCode](https://img.shields.io/badge/LeetCode-{lc['total']}-FFA116?logo=leetcode&logoColor=white)
+
+",
+        f"
+
+![CF](https://img.shields.io/badge/Codeforces-{cf['rating']}-1F8ACB?logo=codeforces&logoColor=white)
+
+",
+        f"
+
+![Streak](https://img.shields.io/badge/Streak-{cur_streak}%20days-39d353?logo=github)
+
+",
+        f"
+
+![Total](https://img.shields.io/badge/Problems-{total}-blueviolet)
+
+",
     ])
 
-    # ── problems table ──
     table_rows = "\n".join(
         f"| {p.get('Date','—')} | {p.get('Problem','—')} "
         f"| {p.get('Platform','—')} | {p.get('Topic','—')} "
         f"| {p.get('Difficulty','—')} | {p.get('Link','—')} |"
-        for p in reversed(problems)          # newest first
+        for p in reversed(problems)
     )
 
-    # ── last-7-days section ──
     if recent:
         recent_rows = "\n".join(
             f"| {d.strftime('%d %b')} | {p.get('Problem','—')} "
@@ -291,20 +258,21 @@ def build_readme(problems):
     else:
         recent_section = "## 📅 Last 7 Days\n_No problems logged this week yet._\n\n---"
 
-    # ── topic badges ──
     topic_badges = "  ".join(
-        f"![{k}](https://img.shields.io/badge/{k.replace(' ','%20')}-{v}-0a84ff)"
+        f"
+
+![{k}](https://img.shields.io/badge/{k.replace(' ','%20')
+
+}-{v}-0a84ff)"
         for k, v in topics.most_common()
     )
 
-    # ── platform split ──
     platform_rows = "\n".join(
         f"| {plat} | {cnt} | {'█' * min(cnt, 20)} |"
         for plat, cnt in platforms.most_common()
     )
 
-    # ── README ──
-    readme = f"""# 🚀 DSA Forge — {GITHUB_USER}
+    return f"""# 🚀 DSA Forge — {GITHUB_USER}
 
 > _Last updated: {datetime.now().strftime("%d %b %Y, %H:%M")} UTC_
 
@@ -339,12 +307,20 @@ def build_readme(problems):
 ---
 
 ## 🟩 Activity Graph
+
+
 ![Graph](https://github-readme-activity-graph.vercel.app/graph?username={GITHUB_USER}&theme=github-dark&hide_border=true)
+
+
 
 ---
 
 ## 🗓️ Heatmap (last 90 days)
+
+
 ![Heatmap](heatmap.svg)
+
+
 
 ---
 
@@ -356,7 +332,6 @@ def build_readme(problems):
 | Topic | Count |
 |-------|-------|
 {"".join(f"| {k} | {v} |" + chr(10) for k, v in topics.most_common())}
-
 ---
 
 ## 🖥️ Platform Split
@@ -372,12 +347,7 @@ def build_readme(problems):
 {table_rows}
 """
 
-    return readme
 
-
-# ══════════════════════════════════════════════
-# 10. MAIN
-# ══════════════════════════════════════════════
 if __name__ == "__main__":
     data   = load_problems()
     readme = build_readme(data)
@@ -385,6 +355,5 @@ if __name__ == "__main__":
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(readme)
 
-    print("✅ README.md updated successfully")
+    print("✅ README.md updated")
     print("✅ heatmap.svg written")
-    print("   → Make sure your workflow does: git add README.md heatmap.svg")
