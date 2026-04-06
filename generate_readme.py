@@ -22,7 +22,7 @@ def parse_date(date_str):
     today = date.today()
     for year in [today.year, today.year - 1]:
         try:
-            d = datetime.strptime(f"{date_str} {year}", "%d %b %Y").date()
+            d = datetime.strptime(str(date_str) + " " + str(year), "%d %b %Y").date()
             if d <= today:
                 return d
         except ValueError:
@@ -36,7 +36,6 @@ def calc_streaks(problems):
         d = parse_date(p["Date"])
         if d:
             dates.add(d)
-
     today = date.today()
     cur = 0
     start = today if today in dates else today - timedelta(days=1)
@@ -44,7 +43,6 @@ def calc_streaks(problems):
     while d in dates:
         cur += 1
         d -= timedelta(days=1)
-
     best = 0
     run = 0
     prev = None
@@ -55,7 +53,6 @@ def calc_streaks(problems):
             run = 1
         best = max(best, run)
         prev = d
-
     return cur, best
 
 
@@ -88,11 +85,9 @@ def generate_heatmap(problems):
         d = parse_date(p["Date"])
         if d:
             counter[d] += 1
-
     today = date.today()
     start = today - timedelta(days=90)
     palette = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
-
     rects = []
     d = start
     i = 0
@@ -104,17 +99,15 @@ def generate_heatmap(problems):
         color = palette[level]
         tip = d.strftime("%b %d")
         rects.append(
-            f'<rect x="{x}" y="{y}" width="10" height="10" '
-            f'fill="{color}" rx="2"><title>{tip}: {cnt}</title></rect>'
+            '<rect x="' + str(x) + '" y="' + str(y) + '" width="10" height="10" '
+            'fill="' + color + '" rx="2"><title>' + tip + ': ' + str(cnt) + '</title></rect>'
         )
         d += timedelta(days=1)
         i += 1
-
     width = ((i // 7) + 1) * 13
     svg = (
-        f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'width="{width}" height="104" '
-        f'style="background:#0d1117;padding:4px;border-radius:6px">'
+        '<svg xmlns="http://www.w3.org/2000/svg" width="' + str(width) + '" height="104" '
+        'style="background:#0d1117;padding:4px;border-radius:6px">'
         + "".join(rects)
         + "</svg>"
     )
@@ -125,7 +118,7 @@ def generate_heatmap(problems):
 def leetcode_stats():
     try:
         r = requests.get(
-            f"https://leetcode-stats-api.herokuapp.com/{LEETCODE_USER}",
+            "https://leetcode-stats-api.herokuapp.com/" + LEETCODE_USER,
             timeout=8
         )
         data = r.json()
@@ -143,7 +136,7 @@ def leetcode_stats():
 def cf_info():
     try:
         r = requests.get(
-            f"https://codeforces.com/api/user.info?handles={CF_USER}",
+            "https://codeforces.com/api/user.info?handles=" + CF_USER,
             timeout=8
         )
         u = r.json()["result"][0]
@@ -160,29 +153,21 @@ def github_contributions():
     token = os.getenv("GH_TOKEN")
     if not token:
         return 0
-    query = """
-    query($login: String!) {
-      user(login: $login) {
-        contributionsCollection {
-          contributionCalendar { totalContributions }
-        }
-      }
-    }
-    """
+    query = "query($login: String!) { user(login: $login) { contributionsCollection { contributionCalendar { totalContributions } } } }"
     try:
         r = requests.post(
             "https://api.github.com/graphql",
             json={"query": query, "variables": {"login": GITHUB_USER}},
-            headers={"Authorization": f"Bearer {token}"},
+            headers={"Authorization": "Bearer " + token},
             timeout=8,
         )
-        return (
-            r.json()["data"]["user"]
-            ["contributionsCollection"]["contributionCalendar"]
-            ["totalContributions"]
-        )
+        return r.json()["data"]["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
     except Exception:
         return 0
+
+
+def img(alt, url):
+    return "![" + alt + "](" + url + ")"
 
 
 def build_readme(problems):
@@ -205,150 +190,111 @@ def build_readme(problems):
     bar = diff_bar(easy, medium, hard)
 
     badges = (
-        f"
-
-![LeetCode](https://img.shields.io/badge/LeetCode-{lc['total']}-FFA116?logo=leetcode&logoColor=white)
-
- "
-        f"
-
-![CF](https://img.shields.io/badge/Codeforces-{cf['rating']}-1F8ACB?logo=codeforces&logoColor=white)
-
- "
-        f"
-
-![Streak](https://img.shields.io/badge/Streak-{cur_streak}%20days-39d353?logo=github)
-
- "
-        f"
-
-![Total](https://img.shields.io/badge/Problems-{total}-blueviolet)
-
-"
+        img("LeetCode", "https://img.shields.io/badge/LeetCode-" + str(lc["total"]) + "-FFA116?logo=leetcode&logoColor=white") + " "
+        + img("CF", "https://img.shields.io/badge/Codeforces-" + str(cf["rating"]) + "-1F8ACB?logo=codeforces&logoColor=white") + " "
+        + img("Streak", "https://img.shields.io/badge/Streak-" + str(cur_streak) + "%20days-39d353?logo=github") + " "
+        + img("Total", "https://img.shields.io/badge/Problems-" + str(total) + "-blueviolet")
     )
 
+    graph = img("Graph", "https://github-readme-activity-graph.vercel.app/graph?username=" + GITHUB_USER + "&theme=github-dark&hide_border=true")
+    heatmap = img("Heatmap", "heatmap.svg")
+
     table_rows = "\n".join(
-        f"| {p.get('Date','—')} | {p.get('Problem','—')} "
-        f"| {p.get('Platform','—')} | {p.get('Topic','—')} "
-        f"| {p.get('Difficulty','—')} | {p.get('Link','—')} |"
+        "| " + p.get("Date", "-") + " | " + p.get("Problem", "-") +
+        " | " + p.get("Platform", "-") + " | " + p.get("Topic", "-") +
+        " | " + p.get("Difficulty", "-") + " | " + p.get("Link", "-") + " |"
         for p in reversed(problems)
     )
 
     if recent:
         recent_rows = "\n".join(
-            f"| {d.strftime('%d %b')} | {p.get('Problem','—')} "
-            f"| {p.get('Platform','—')} | {p.get('Difficulty','—')} |"
+            "| " + d.strftime("%d %b") + " | " + p.get("Problem", "-") +
+            " | " + p.get("Platform", "-") + " | " + p.get("Difficulty", "-") + " |"
             for d, p in recent
         )
         recent_section = (
-            f"## 📅 Last 7 Days  ({len(recent)} problems)\n"
-            f"| Date | Problem | Platform | Difficulty |\n"
-            f"|------|---------|----------|------------|\n"
-            f"{recent_rows}\n\n---"
+            "## Last 7 Days (" + str(len(recent)) + " problems)\n"
+            "| Date | Problem | Platform | Difficulty |\n"
+            "|------|---------|----------|------------|\n"
+            + recent_rows + "\n\n---"
         )
     else:
-        recent_section = "## 📅 Last 7 Days\n_No problems logged this week yet._\n\n---"
+        recent_section = "## Last 7 Days\n_No problems this week yet._\n\n---"
 
     topic_badges = "  ".join(
-        f"
-
-![{k}](https://img.shields.io/badge/{k.replace(' ', '%20')
-
-}-{v}-0a84ff)"
+        img(k, "https://img.shields.io/badge/" + k.replace(" ", "%20") + "-" + str(v) + "-0a84ff")
         for k, v in topics.most_common()
     )
 
     topic_rows = "".join(
-        f"| {k} | {v} |\n"
+        "| " + k + " | " + str(v) + " |\n"
         for k, v in topics.most_common()
     )
 
     platform_rows = "\n".join(
-        f"| {plat} | {cnt} | {'█' * min(cnt, 20)} |"
+        "| " + plat + " | " + str(cnt) + " | " + ("X" * min(cnt, 20)) + " |"
         for plat, cnt in platforms.most_common()
     )
 
-    readme = f"""# 🚀 DSA Forge — {GITHUB_USER}
+    updated = datetime.now().strftime("%d %b %Y, %H:%M")
 
-> _Last updated: {datetime.now().strftime("%d %b %Y, %H:%M")} UTC_
+    readme = (
+        "# DSA Forge - " + GITHUB_USER + "\n\n"
+        "> Last updated: " + updated + " UTC\n\n"
+        + badges + "\n\n"
+        "---\n\n"
+        "## Overview\n"
+        "| Metric | Value |\n"
+        "|--------|-------|\n"
+        "| LeetCode Solved | **" + str(lc["total"]) + "** (E:" + str(lc["easy"]) + " M:" + str(lc["medium"]) + " H:" + str(lc["hard"]) + ") |\n"
+        "| LeetCode Rank | **" + str(lc["rank"]) + "** |\n"
+        "| Codeforces Rating | **" + str(cf["rating"]) + "** (peak: " + str(cf["max_rating"]) + ") |\n"
+        "| CF Rank | **" + str(cf["rank"]) + "** |\n"
+        "| GitHub Contributions | **" + str(gh) + "** |\n"
+        "| Current Streak | **" + str(cur_streak) + " days** |\n"
+        "| Best Streak | **" + str(best) + " days** |\n"
+        "| 30-day Consistency | **" + str(consistency) + "%** |\n"
+        "| Total Problems | **" + str(total) + "** |\n\n"
+        "---\n\n"
+        "## Difficulty Breakdown\n"
+        "| Level | Count |\n"
+        "|-------|-------|\n"
+        "| Easy | " + str(easy) + " |\n"
+        "| Medium | " + str(medium) + " |\n"
+        "| Hard | " + str(hard) + " |\n\n"
+        + bar + "\n\n"
+        "---\n\n"
+        "## Activity Graph\n"
+        + graph + "\n\n"
+        "---\n\n"
+        "## Heatmap (last 90 days)\n"
+        + heatmap + "\n\n"
+        "---\n\n"
+        + recent_section + "\n\n"
+        "## Topics Covered\n"
+        + topic_badges + "\n\n"
+        "| Topic | Count |\n"
+        "|-------|-------|\n"
+        + topic_rows
+        + "\n---\n\n"
+        "## Platform Split\n"
+        "| Platform | Count | Bar |\n"
+        "|----------|-------|-----|\n"
+        + platform_rows + "\n\n"
+        "---\n\n"
+        "## All Problems (" + str(total) + " total)\n"
+        "| Date | Problem | Platform | Topic | Difficulty | Link |\n"
+        "|------|---------|----------|-------|------------|------|\n"
+        + table_rows + "\n"
+    )
 
-{badges}
-
----
-
-## 👨‍💻 Overview
-| Metric | Value |
-|--------|-------|
-| 🧠 LeetCode Solved | **{lc['total']}** (E:{lc['easy']} M:{lc['medium']} H:{lc['hard']}) |
-| 🏅 LeetCode Rank | **{lc['rank']}** |
-| ⚔️ Codeforces Rating | **{cf['rating']}** (peak: {cf['max_rating']}) |
-| 🎖️ CF Rank | **{cf['rank']}** |
-| 🟩 GitHub Contributions | **{gh}** |
-| 🔥 Current Streak | **{cur_streak} days** |
-| 🏆 Best Streak | **{best} days** |
-| ⚡ 30-day Consistency | **{consistency}%** |
-| 📊 Total Problems | **{total}** |
-
----
-
-## 📊 Difficulty Breakdown
-| Level | Count |
-|-------|-------|
-| 🟢 Easy | {easy} |
-| 🟡 Medium | {medium} |
-| 🔴 Hard | {hard} |
-
-{bar}
-
----
-
-## 🟩 Activity Graph
-
-
-![Graph](https://github-readme-activity-graph.vercel.app/graph?username={GITHUB_USER}&theme=github-dark&hide_border=true)
-
-
-
----
-
-## 🗓️ Heatmap (last 90 days)
-
-
-![Heatmap](heatmap.svg)
-
----
-
-{recent_section}
-
-## 🧠 Topics Covered
-{topic_badges}
-
-| Topic | Count |
-|-------|-------|
-{topic_rows}
----
-
-## 🖥️ Platform Split
-| Platform | Count | Bar |
-|----------|-------|-----|
-{platform_rows}
-
----
-
-## 📁 All Problems ({total} total)
-| Date | Problem | Platform | Topic | Difficulty | Link |
-|------|---------|----------|-------|------------|------|
-{table_rows}
-"""
     return readme
 
 
 if __name__ == "__main__":
     data = load_problems()
     readme = build_readme(data)
-
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(readme)
-
-    print("✅ README.md updated")
-    print("✅ heatmap.svg written")
+    print("README.md updated")
+    print("heatmap.svg written")
