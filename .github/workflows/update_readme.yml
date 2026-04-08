@@ -2,7 +2,7 @@ name: Generate Readme
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Updates every 6 hours
+    - cron: '0 */6 * * *'
   workflow_dispatch:
   push:
     branches:
@@ -20,13 +20,12 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run Generator
-        run: python generate_readme.py # Yahan file name sahi kar diya hai
+      - name: Run Script
+        run: python generate_readme.py
 
       - name: Commit and Push
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "System: Auto-update Dashboard [skip ci]" && git push)
-          
+          git add README.md heatmap.svg # SVG ko bhi add kiya
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Update Stats" && git push)
