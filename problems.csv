@@ -35,5 +35,6 @@ Date,Problem,Platform,Difficulty,Topic,Status
 06 Apr,"[3Sum Closest](https://leetcode.com/problems/3sum-closest/)",LeetCode,Medium,Two_Pointers,Done
 06 Apr,"[A. Ambitious Kid](https://codeforces.com/problemset/problem/1866/A)",Codeforces,800,Math,Done
 07 Apr,"[Walking Robot Simulation II](https://leetcode.com/problems/walking-robot-simulation-ii/)",LeetCode,Medium,Simulation,Done
-07 Apr,"[A. Sequence Game](https://codeforces.com/problemset/problem/2164/A)",Codeforces,800,Greedy,Done
+07 Apr,"[A. Sequence Game](https://codeforces.com/problemset/problem/1862/A)",Codeforces,800,Greedy,Done
 09 Apr,"[Partition Array According to Given Pivot](https://leetcode.com/problems/partition-array-according-to-given-pivot/)",LeetCode,Medium,Array,Done
+09 Apr,"[A. Buttons](https://codeforces.com/problemset/problem/1858/A)",Codeforces,800,Math,Done
