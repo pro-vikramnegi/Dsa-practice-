@@ -1,4 +1,191 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="434" height="169">
-    <rect width="100%" height="100%" fill="#0d1117" rx="10"/>
-    <text x="20" y="20" fill="#58a6ff" font-size="12" font-family="monospace" font-weight="bold">COMMIT ENGINE: STREAK ACTIVE</text>
-    <rect x="40" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="40" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="40" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="40" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="40" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="40" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="40" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="57" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="57" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="57" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="57" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="57" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="57" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="57" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="74" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="74" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="74" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="74" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="74" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="74" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="74" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="91" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="91" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="91" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="91" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="91" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="91" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="91" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="108" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="108" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="108" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="108" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="108" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="108" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="108" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="125" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="125" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="125" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="125" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="125" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="125" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="125" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="142" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="142" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="142" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="142" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="142" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="142" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="142" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="159" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="159" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="159" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="159" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="159" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="159" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="159" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="176" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="176" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="176" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="176" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="176" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="176" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="176" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="193" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="193" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="193" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="193" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="193" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="193" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="193" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="210" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="210" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="210" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="210" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="210" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="210" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="210" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="227" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="227" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="227" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="227" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="227" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="227" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="227" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="244" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="244" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="244" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="244" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="244" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="244" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="244" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="261" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="261" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="261" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="261" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="261" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="261" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="261" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="278" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="278" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="278" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="278" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="278" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="278" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="278" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="295" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="295" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="295" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="295" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="295" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="295" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="295" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="312" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="312" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="312" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="312" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="312" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="312" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="312" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="329" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="329" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="329" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="329" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="329" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="329" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="329" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="346" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="346" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="346" y="64" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="346" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="346" y="98" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="346" y="115" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="346" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="363" y="30" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="363" y="47" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="363" y="64" width="14" height="14" rx="3" fill="#0e4429"></rect><rect x="363" y="81" width="14" height="14" rx="3" fill="#006d32"></rect><rect x="363" y="98" width="14" height="14" rx="3" fill="#26a641"></rect><rect x="363" y="115" width="14" height="14" rx="3" fill="#006d32"></rect><rect x="363" y="132" width="14" height="14" rx="3" fill="#006d32"></rect><rect x="380" y="30" width="14" height="14" rx="3" fill="#26a641"></rect><rect x="380" y="47" width="14" height="14" rx="3" fill="#006d32"></rect><rect x="380" y="64" width="14" height="14" rx="3" fill="#26a641"></rect><rect x="380" y="81" width="14" height="14" rx="3" fill="#006d32"></rect><rect x="380" y="98" width="14" height="14" rx="3" fill="#26a641"></rect><rect x="380" y="115" width="14" height="14" rx="3" fill="#26a641"></rect><rect x="380" y="132" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="397" y="30" width="14" height="14" rx="3" fill="#26a641"></rect><rect x="397" y="47" width="14" height="14" rx="3" fill="#26a641"></rect><rect x="397" y="64" width="14" height="14" rx="3" fill="#006d32"></rect><rect x="397" y="81" width="14" height="14" rx="3" fill="#161b22"></rect><rect x="397" y="98" width="14" height="14" rx="3" fill="#0d1117"></rect><rect x="397" y="115" width="14" height="14" rx="3" fill="#0d1117"></rect><rect x="397" y="132" width="14" height="14" rx="3" fill="#0d1117"></rect></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="422" height="170" viewBox="0 0 422 170">
+  <rect width="422" height="170" rx="12" fill="#0d1117"/>
+  <rect x="1" y="1" width="420" height="168" rx="12" fill="none" stroke="#21262d" stroke-width="1"/>
+  <text x="211" y="16" font-family="Segoe UI" font-size="10" font-weight="700"
+    fill="#484f58" text-anchor="middle" letter-spacing="2">DSA ACTIVITY  —  LAST 24 WEEKS</text>
+  <text x="60" y="22" font-family="Segoe UI" font-size="9" fill="#484f58">Nov</text>
+<text x="124" y="22" font-family="Segoe UI" font-size="9" fill="#484f58">Dec</text>
+<text x="204" y="22" font-family="Segoe UI" font-size="9" fill="#484f58">Jan</text>
+<text x="268" y="22" font-family="Segoe UI" font-size="9" fill="#484f58">Feb</text>
+<text x="332" y="22" font-family="Segoe UI" font-size="9" fill="#484f58">Mar</text>
+<text x="412" y="22" font-family="Segoe UI" font-size="9" fill="#484f58">Apr</text>
+
+  <text x="2" y="55" font-family="Segoe UI" font-size="9" fill="#484f58">Mon</text>
+<text x="2" y="87" font-family="Segoe UI" font-size="9" fill="#484f58">Wed</text>
+<text x="2" y="119" font-family="Segoe UI" font-size="9" fill="#484f58">Fri</text>
+
+  <rect x="28" y="28" width="13" height="13" rx="3" fill="#161b22"><title>26 Oct: 0 problems</title></rect>
+<rect x="44" y="28" width="13" height="13" rx="3" fill="#161b22"><title>27 Oct: 0 problems</title></rect>
+<rect x="44" y="44" width="13" height="13" rx="3" fill="#161b22"><title>28 Oct: 0 problems</title></rect>
+<rect x="44" y="60" width="13" height="13" rx="3" fill="#161b22"><title>29 Oct: 0 problems</title></rect>
+<rect x="44" y="76" width="13" height="13" rx="3" fill="#161b22"><title>30 Oct: 0 problems</title></rect>
+<rect x="44" y="92" width="13" height="13" rx="3" fill="#161b22"><title>31 Oct: 0 problems</title></rect>
+<rect x="44" y="108" width="13" height="13" rx="3" fill="#161b22"><title>01 Nov: 0 problems</title></rect>
+<rect x="44" y="124" width="13" height="13" rx="3" fill="#161b22"><title>02 Nov: 0 problems</title></rect>
+<rect x="60" y="28" width="13" height="13" rx="3" fill="#161b22"><title>03 Nov: 0 problems</title></rect>
+<rect x="60" y="44" width="13" height="13" rx="3" fill="#161b22"><title>04 Nov: 0 problems</title></rect>
+<rect x="60" y="60" width="13" height="13" rx="3" fill="#161b22"><title>05 Nov: 0 problems</title></rect>
+<rect x="60" y="76" width="13" height="13" rx="3" fill="#161b22"><title>06 Nov: 0 problems</title></rect>
+<rect x="60" y="92" width="13" height="13" rx="3" fill="#161b22"><title>07 Nov: 0 problems</title></rect>
+<rect x="60" y="108" width="13" height="13" rx="3" fill="#161b22"><title>08 Nov: 0 problems</title></rect>
+<rect x="60" y="124" width="13" height="13" rx="3" fill="#161b22"><title>09 Nov: 0 problems</title></rect>
+<rect x="76" y="28" width="13" height="13" rx="3" fill="#161b22"><title>10 Nov: 0 problems</title></rect>
+<rect x="76" y="44" width="13" height="13" rx="3" fill="#161b22"><title>11 Nov: 0 problems</title></rect>
+<rect x="76" y="60" width="13" height="13" rx="3" fill="#161b22"><title>12 Nov: 0 problems</title></rect>
+<rect x="76" y="76" width="13" height="13" rx="3" fill="#161b22"><title>13 Nov: 0 problems</title></rect>
+<rect x="76" y="92" width="13" height="13" rx="3" fill="#161b22"><title>14 Nov: 0 problems</title></rect>
+<rect x="76" y="108" width="13" height="13" rx="3" fill="#161b22"><title>15 Nov: 0 problems</title></rect>
+<rect x="76" y="124" width="13" height="13" rx="3" fill="#161b22"><title>16 Nov: 0 problems</title></rect>
+<rect x="92" y="28" width="13" height="13" rx="3" fill="#161b22"><title>17 Nov: 0 problems</title></rect>
+<rect x="92" y="44" width="13" height="13" rx="3" fill="#161b22"><title>18 Nov: 0 problems</title></rect>
+<rect x="92" y="60" width="13" height="13" rx="3" fill="#161b22"><title>19 Nov: 0 problems</title></rect>
+<rect x="92" y="76" width="13" height="13" rx="3" fill="#161b22"><title>20 Nov: 0 problems</title></rect>
+<rect x="92" y="92" width="13" height="13" rx="3" fill="#161b22"><title>21 Nov: 0 problems</title></rect>
+<rect x="92" y="108" width="13" height="13" rx="3" fill="#161b22"><title>22 Nov: 0 problems</title></rect>
+<rect x="92" y="124" width="13" height="13" rx="3" fill="#161b22"><title>23 Nov: 0 problems</title></rect>
+<rect x="108" y="28" width="13" height="13" rx="3" fill="#161b22"><title>24 Nov: 0 problems</title></rect>
+<rect x="108" y="44" width="13" height="13" rx="3" fill="#161b22"><title>25 Nov: 0 problems</title></rect>
+<rect x="108" y="60" width="13" height="13" rx="3" fill="#161b22"><title>26 Nov: 0 problems</title></rect>
+<rect x="108" y="76" width="13" height="13" rx="3" fill="#161b22"><title>27 Nov: 0 problems</title></rect>
+<rect x="108" y="92" width="13" height="13" rx="3" fill="#161b22"><title>28 Nov: 0 problems</title></rect>
+<rect x="108" y="108" width="13" height="13" rx="3" fill="#161b22"><title>29 Nov: 0 problems</title></rect>
+<rect x="108" y="124" width="13" height="13" rx="3" fill="#161b22"><title>30 Nov: 0 problems</title></rect>
+<rect x="124" y="28" width="13" height="13" rx="3" fill="#161b22"><title>01 Dec: 0 problems</title></rect>
+<rect x="124" y="44" width="13" height="13" rx="3" fill="#161b22"><title>02 Dec: 0 problems</title></rect>
+<rect x="124" y="60" width="13" height="13" rx="3" fill="#161b22"><title>03 Dec: 0 problems</title></rect>
+<rect x="124" y="76" width="13" height="13" rx="3" fill="#161b22"><title>04 Dec: 0 problems</title></rect>
+<rect x="124" y="92" width="13" height="13" rx="3" fill="#161b22"><title>05 Dec: 0 problems</title></rect>
+<rect x="124" y="108" width="13" height="13" rx="3" fill="#161b22"><title>06 Dec: 0 problems</title></rect>
+<rect x="124" y="124" width="13" height="13" rx="3" fill="#161b22"><title>07 Dec: 0 problems</title></rect>
+<rect x="140" y="28" width="13" height="13" rx="3" fill="#161b22"><title>08 Dec: 0 problems</title></rect>
+<rect x="140" y="44" width="13" height="13" rx="3" fill="#161b22"><title>09 Dec: 0 problems</title></rect>
+<rect x="140" y="60" width="13" height="13" rx="3" fill="#161b22"><title>10 Dec: 0 problems</title></rect>
+<rect x="140" y="76" width="13" height="13" rx="3" fill="#161b22"><title>11 Dec: 0 problems</title></rect>
+<rect x="140" y="92" width="13" height="13" rx="3" fill="#161b22"><title>12 Dec: 0 problems</title></rect>
+<rect x="140" y="108" width="13" height="13" rx="3" fill="#161b22"><title>13 Dec: 0 problems</title></rect>
+<rect x="140" y="124" width="13" height="13" rx="3" fill="#161b22"><title>14 Dec: 0 problems</title></rect>
+<rect x="156" y="28" width="13" height="13" rx="3" fill="#161b22"><title>15 Dec: 0 problems</title></rect>
+<rect x="156" y="44" width="13" height="13" rx="3" fill="#161b22"><title>16 Dec: 0 problems</title></rect>
+<rect x="156" y="60" width="13" height="13" rx="3" fill="#161b22"><title>17 Dec: 0 problems</title></rect>
+<rect x="156" y="76" width="13" height="13" rx="3" fill="#161b22"><title>18 Dec: 0 problems</title></rect>
+<rect x="156" y="92" width="13" height="13" rx="3" fill="#161b22"><title>19 Dec: 0 problems</title></rect>
+<rect x="156" y="108" width="13" height="13" rx="3" fill="#161b22"><title>20 Dec: 0 problems</title></rect>
+<rect x="156" y="124" width="13" height="13" rx="3" fill="#161b22"><title>21 Dec: 0 problems</title></rect>
+<rect x="172" y="28" width="13" height="13" rx="3" fill="#161b22"><title>22 Dec: 0 problems</title></rect>
+<rect x="172" y="44" width="13" height="13" rx="3" fill="#161b22"><title>23 Dec: 0 problems</title></rect>
+<rect x="172" y="60" width="13" height="13" rx="3" fill="#161b22"><title>24 Dec: 0 problems</title></rect>
+<rect x="172" y="76" width="13" height="13" rx="3" fill="#161b22"><title>25 Dec: 0 problems</title></rect>
+<rect x="172" y="92" width="13" height="13" rx="3" fill="#161b22"><title>26 Dec: 0 problems</title></rect>
+<rect x="172" y="108" width="13" height="13" rx="3" fill="#161b22"><title>27 Dec: 0 problems</title></rect>
+<rect x="172" y="124" width="13" height="13" rx="3" fill="#161b22"><title>28 Dec: 0 problems</title></rect>
+<rect x="188" y="28" width="13" height="13" rx="3" fill="#161b22"><title>29 Dec: 0 problems</title></rect>
+<rect x="188" y="44" width="13" height="13" rx="3" fill="#161b22"><title>30 Dec: 0 problems</title></rect>
+<rect x="188" y="60" width="13" height="13" rx="3" fill="#161b22"><title>31 Dec: 0 problems</title></rect>
+<rect x="188" y="76" width="13" height="13" rx="3" fill="#161b22"><title>01 Jan: 0 problems</title></rect>
+<rect x="188" y="92" width="13" height="13" rx="3" fill="#161b22"><title>02 Jan: 0 problems</title></rect>
+<rect x="188" y="108" width="13" height="13" rx="3" fill="#161b22"><title>03 Jan: 0 problems</title></rect>
+<rect x="188" y="124" width="13" height="13" rx="3" fill="#161b22"><title>04 Jan: 0 problems</title></rect>
+<rect x="204" y="28" width="13" height="13" rx="3" fill="#161b22"><title>05 Jan: 0 problems</title></rect>
+<rect x="204" y="44" width="13" height="13" rx="3" fill="#161b22"><title>06 Jan: 0 problems</title></rect>
+<rect x="204" y="60" width="13" height="13" rx="3" fill="#161b22"><title>07 Jan: 0 problems</title></rect>
+<rect x="204" y="76" width="13" height="13" rx="3" fill="#161b22"><title>08 Jan: 0 problems</title></rect>
+<rect x="204" y="92" width="13" height="13" rx="3" fill="#161b22"><title>09 Jan: 0 problems</title></rect>
+<rect x="204" y="108" width="13" height="13" rx="3" fill="#161b22"><title>10 Jan: 0 problems</title></rect>
+<rect x="204" y="124" width="13" height="13" rx="3" fill="#161b22"><title>11 Jan: 0 problems</title></rect>
+<rect x="220" y="28" width="13" height="13" rx="3" fill="#161b22"><title>12 Jan: 0 problems</title></rect>
+<rect x="220" y="44" width="13" height="13" rx="3" fill="#161b22"><title>13 Jan: 0 problems</title></rect>
+<rect x="220" y="60" width="13" height="13" rx="3" fill="#161b22"><title>14 Jan: 0 problems</title></rect>
+<rect x="220" y="76" width="13" height="13" rx="3" fill="#161b22"><title>15 Jan: 0 problems</title></rect>
+<rect x="220" y="92" width="13" height="13" rx="3" fill="#161b22"><title>16 Jan: 0 problems</title></rect>
+<rect x="220" y="108" width="13" height="13" rx="3" fill="#161b22"><title>17 Jan: 0 problems</title></rect>
+<rect x="220" y="124" width="13" height="13" rx="3" fill="#161b22"><title>18 Jan: 0 problems</title></rect>
+<rect x="236" y="28" width="13" height="13" rx="3" fill="#161b22"><title>19 Jan: 0 problems</title></rect>
+<rect x="236" y="44" width="13" height="13" rx="3" fill="#161b22"><title>20 Jan: 0 problems</title></rect>
+<rect x="236" y="60" width="13" height="13" rx="3" fill="#161b22"><title>21 Jan: 0 problems</title></rect>
+<rect x="236" y="76" width="13" height="13" rx="3" fill="#161b22"><title>22 Jan: 0 problems</title></rect>
+<rect x="236" y="92" width="13" height="13" rx="3" fill="#161b22"><title>23 Jan: 0 problems</title></rect>
+<rect x="236" y="108" width="13" height="13" rx="3" fill="#161b22"><title>24 Jan: 0 problems</title></rect>
+<rect x="236" y="124" width="13" height="13" rx="3" fill="#161b22"><title>25 Jan: 0 problems</title></rect>
+<rect x="252" y="28" width="13" height="13" rx="3" fill="#161b22"><title>26 Jan: 0 problems</title></rect>
+<rect x="252" y="44" width="13" height="13" rx="3" fill="#161b22"><title>27 Jan: 0 problems</title></rect>
+<rect x="252" y="60" width="13" height="13" rx="3" fill="#161b22"><title>28 Jan: 0 problems</title></rect>
+<rect x="252" y="76" width="13" height="13" rx="3" fill="#161b22"><title>29 Jan: 0 problems</title></rect>
+<rect x="252" y="92" width="13" height="13" rx="3" fill="#161b22"><title>30 Jan: 0 problems</title></rect>
+<rect x="252" y="108" width="13" height="13" rx="3" fill="#161b22"><title>31 Jan: 0 problems</title></rect>
+<rect x="252" y="124" width="13" height="13" rx="3" fill="#161b22"><title>01 Feb: 0 problems</title></rect>
+<rect x="268" y="28" width="13" height="13" rx="3" fill="#161b22"><title>02 Feb: 0 problems</title></rect>
+<rect x="268" y="44" width="13" height="13" rx="3" fill="#161b22"><title>03 Feb: 0 problems</title></rect>
+<rect x="268" y="60" width="13" height="13" rx="3" fill="#161b22"><title>04 Feb: 0 problems</title></rect>
+<rect x="268" y="76" width="13" height="13" rx="3" fill="#161b22"><title>05 Feb: 0 problems</title></rect>
+<rect x="268" y="92" width="13" height="13" rx="3" fill="#161b22"><title>06 Feb: 0 problems</title></rect>
+<rect x="268" y="108" width="13" height="13" rx="3" fill="#161b22"><title>07 Feb: 0 problems</title></rect>
+<rect x="268" y="124" width="13" height="13" rx="3" fill="#161b22"><title>08 Feb: 0 problems</title></rect>
+<rect x="284" y="28" width="13" height="13" rx="3" fill="#161b22"><title>09 Feb: 0 problems</title></rect>
+<rect x="284" y="44" width="13" height="13" rx="3" fill="#161b22"><title>10 Feb: 0 problems</title></rect>
+<rect x="284" y="60" width="13" height="13" rx="3" fill="#161b22"><title>11 Feb: 0 problems</title></rect>
+<rect x="284" y="76" width="13" height="13" rx="3" fill="#161b22"><title>12 Feb: 0 problems</title></rect>
+<rect x="284" y="92" width="13" height="13" rx="3" fill="#161b22"><title>13 Feb: 0 problems</title></rect>
+<rect x="284" y="108" width="13" height="13" rx="3" fill="#161b22"><title>14 Feb: 0 problems</title></rect>
+<rect x="284" y="124" width="13" height="13" rx="3" fill="#161b22"><title>15 Feb: 0 problems</title></rect>
+<rect x="300" y="28" width="13" height="13" rx="3" fill="#161b22"><title>16 Feb: 0 problems</title></rect>
+<rect x="300" y="44" width="13" height="13" rx="3" fill="#161b22"><title>17 Feb: 0 problems</title></rect>
+<rect x="300" y="60" width="13" height="13" rx="3" fill="#161b22"><title>18 Feb: 0 problems</title></rect>
+<rect x="300" y="76" width="13" height="13" rx="3" fill="#161b22"><title>19 Feb: 0 problems</title></rect>
+<rect x="300" y="92" width="13" height="13" rx="3" fill="#161b22"><title>20 Feb: 0 problems</title></rect>
+<rect x="300" y="108" width="13" height="13" rx="3" fill="#161b22"><title>21 Feb: 0 problems</title></rect>
+<rect x="300" y="124" width="13" height="13" rx="3" fill="#161b22"><title>22 Feb: 0 problems</title></rect>
+<rect x="316" y="28" width="13" height="13" rx="3" fill="#161b22"><title>23 Feb: 0 problems</title></rect>
+<rect x="316" y="44" width="13" height="13" rx="3" fill="#161b22"><title>24 Feb: 0 problems</title></rect>
+<rect x="316" y="60" width="13" height="13" rx="3" fill="#161b22"><title>25 Feb: 0 problems</title></rect>
+<rect x="316" y="76" width="13" height="13" rx="3" fill="#161b22"><title>26 Feb: 0 problems</title></rect>
+<rect x="316" y="92" width="13" height="13" rx="3" fill="#161b22"><title>27 Feb: 0 problems</title></rect>
+<rect x="316" y="108" width="13" height="13" rx="3" fill="#161b22"><title>28 Feb: 0 problems</title></rect>
+<rect x="316" y="124" width="13" height="13" rx="3" fill="#161b22"><title>01 Mar: 0 problems</title></rect>
+<rect x="332" y="28" width="13" height="13" rx="3" fill="#161b22"><title>02 Mar: 0 problems</title></rect>
+<rect x="332" y="44" width="13" height="13" rx="3" fill="#161b22"><title>03 Mar: 0 problems</title></rect>
+<rect x="332" y="60" width="13" height="13" rx="3" fill="#161b22"><title>04 Mar: 0 problems</title></rect>
+<rect x="332" y="76" width="13" height="13" rx="3" fill="#161b22"><title>05 Mar: 0 problems</title></rect>
+<rect x="332" y="92" width="13" height="13" rx="3" fill="#161b22"><title>06 Mar: 0 problems</title></rect>
+<rect x="332" y="108" width="13" height="13" rx="3" fill="#161b22"><title>07 Mar: 0 problems</title></rect>
+<rect x="332" y="124" width="13" height="13" rx="3" fill="#161b22"><title>08 Mar: 0 problems</title></rect>
+<rect x="348" y="28" width="13" height="13" rx="3" fill="#161b22"><title>09 Mar: 0 problems</title></rect>
+<rect x="348" y="44" width="13" height="13" rx="3" fill="#161b22"><title>10 Mar: 0 problems</title></rect>
+<rect x="348" y="60" width="13" height="13" rx="3" fill="#161b22"><title>11 Mar: 0 problems</title></rect>
+<rect x="348" y="76" width="13" height="13" rx="3" fill="#161b22"><title>12 Mar: 0 problems</title></rect>
+<rect x="348" y="92" width="13" height="13" rx="3" fill="#161b22"><title>13 Mar: 0 problems</title></rect>
+<rect x="348" y="108" width="13" height="13" rx="3" fill="#161b22"><title>14 Mar: 0 problems</title></rect>
+<rect x="348" y="124" width="13" height="13" rx="3" fill="#161b22"><title>15 Mar: 0 problems</title></rect>
+<rect x="364" y="28" width="13" height="13" rx="3" fill="#161b22"><title>16 Mar: 0 problems</title></rect>
+<rect x="364" y="44" width="13" height="13" rx="3" fill="#161b22"><title>17 Mar: 0 problems</title></rect>
+<rect x="364" y="60" width="13" height="13" rx="3" fill="#161b22"><title>18 Mar: 0 problems</title></rect>
+<rect x="364" y="76" width="13" height="13" rx="3" fill="#161b22"><title>19 Mar: 0 problems</title></rect>
+<rect x="364" y="92" width="13" height="13" rx="3" fill="#161b22"><title>20 Mar: 0 problems</title></rect>
+<rect x="364" y="108" width="13" height="13" rx="3" fill="#161b22"><title>21 Mar: 0 problems</title></rect>
+<rect x="364" y="124" width="13" height="13" rx="3" fill="#161b22"><title>22 Mar: 0 problems</title></rect>
+<rect x="380" y="28" width="13" height="13" rx="3" fill="#161b22"><title>23 Mar: 0 problems</title></rect>
+<rect x="380" y="44" width="13" height="13" rx="3" fill="#006d32"><title>24 Mar: 1 problem</title></rect>
+<rect x="380" y="60" width="13" height="13" rx="3" fill="#26a641"><title>25 Mar: 2 problems</title></rect>
+<rect x="380" y="76" width="13" height="13" rx="3" fill="#39d353"><title>26 Mar: 3 problems</title></rect>
+<rect x="380" y="92" width="13" height="13" rx="3" fill="#26a641"><title>27 Mar: 2 problems</title></rect>
+<rect x="380" y="108" width="13" height="13" rx="3" fill="#26a641"><title>28 Mar: 2 problems</title></rect>
+<rect x="380" y="124" width="13" height="13" rx="3" fill="#39d353"><title>29 Mar: 4 problems</title></rect>
+<rect x="396" y="28" width="13" height="13" rx="3" fill="#26a641"><title>30 Mar: 2 problems</title></rect>
+<rect x="396" y="44" width="13" height="13" rx="3" fill="#39d353"><title>31 Mar: 3 problems</title></rect>
+<rect x="396" y="60" width="13" height="13" rx="3" fill="#26a641"><title>01 Apr: 2 problems</title></rect>
+<rect x="396" y="76" width="13" height="13" rx="3" fill="#39d353"><title>02 Apr: 4 problems</title></rect>
+<rect x="396" y="92" width="13" height="13" rx="3" fill="#39d353"><title>03 Apr: 3 problems</title></rect>
+<rect x="396" y="108" width="13" height="13" rx="3" fill="#161b22"><title>04 Apr: 0 problems</title></rect>
+<rect x="396" y="124" width="13" height="13" rx="3" fill="#39d353"><title>05 Apr: 4 problems</title></rect>
+<rect x="412" y="28" width="13" height="13" rx="3" fill="#39d353"><title>06 Apr: 3 problems</title></rect>
+<rect x="412" y="44" width="13" height="13" rx="3" fill="#26a641"><title>07 Apr: 2 problems</title></rect>
+<rect x="412" y="60" width="13" height="13" rx="3" fill="#161b22"><title>08 Apr: 0 problems</title></rect>
+<rect x="412" y="76" width="13" height="13" rx="3" fill="#161b22"><title>09 Apr: 0 problems</title></rect>
+
+  <text x="28" y="164" font-family="Segoe UI" font-size="9" fill="#484f58">37 problems logged</text>
+  <text x="336" y="164" font-family="Segoe UI" font-size="9" fill="#484f58">Less</text>
+  <rect x="344" y="152" width="13" height="13" rx="3" fill="#161b22"/>
+  <rect x="360" y="152" width="13" height="13" rx="3" fill="#0e4429"/>
+  <rect x="376" y="152" width="13" height="13" rx="3" fill="#006d32"/>
+  <rect x="392" y="152" width="13" height="13" rx="3" fill="#26a641"/>
+  <rect x="408" y="152" width="13" height="13" rx="3" fill="#39d353"/>
+</svg>

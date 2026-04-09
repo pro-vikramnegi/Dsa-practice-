@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="438" viewBox="0 0 720 438">
+  <defs>
+    <style>@keyframes fi { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:none} }</style>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#181825"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="438" rx="14" fill="url(#bg)"/>
+  <rect x="1" y="1" width="718" height="436" rx="14" fill="none" stroke="#313244" stroke-width="1.5"/>
+  <text x="18"  y="26" font-family="Segoe UI" font-size="10" font-weight="700" fill="#45475a" letter-spacing="1">#</text>
+  <text x="36"  y="26" font-family="Segoe UI" font-size="10" font-weight="700" fill="#45475a" letter-spacing="1">PROBLEM</text>
+  <text x="450" y="26" font-family="Segoe UI" font-size="10" font-weight="700" fill="#45475a" letter-spacing="1">PLATFORM</text>
+  <text x="589" y="26" font-family="Segoe UI" font-size="10" font-weight="700" fill="#45475a" text-anchor="middle" letter-spacing="1">DIFF</text>
+  <text x="702" y="26" font-family="Segoe UI" font-size="10" font-weight="700" fill="#45475a" text-anchor="end" letter-spacing="1">DATE</text>
+  <line x1="0" y1="34" x2="720" y2="34" stroke="#313244" stroke-width="1"/>
+  
+  <g style="animation: fi 0.35s ease 0.00s both">
+    <rect x="0" y="36" width="720" height="38" fill="#181825"/>
+    <text x="18" y="56" font-family="Segoe UI" font-size="11" fill="#6c7086">1</text>
+    <text x="36" y="56" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[Walking Robot Simulation II](https://leetco</text>
+    <text x="450" y="56" font-family="Segoe UI" font-size="11" fill="#89b4fa">LeetCode</text>
+    <rect x="552" y="43" width="74" height="19" rx="9" fill="#3a2515"/>
+    <text x="589" y="56" font-family="Segoe UI" font-size="11" fill="#fab387" text-anchor="middle">Medium</text>
+    <text x="702" y="56" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">07 Apr</text>
+  </g>
+  <g style="animation: fi 0.35s ease 0.07s both">
+    <rect x="0" y="74" width="720" height="38" fill="#1e1e2e"/>
+    <text x="18" y="94" font-family="Segoe UI" font-size="11" fill="#6c7086">2</text>
+    <text x="36" y="94" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[A. Sequence Game](https://codeforces.com/pr</text>
+    <text x="450" y="94" font-family="Segoe UI" font-size="11" fill="#89b4fa">Codeforces</text>
+    <rect x="552" y="81" width="74" height="19" rx="9" fill="#1a3329"/>
+    <text x="589" y="94" font-family="Segoe UI" font-size="11" fill="#a6e3a1" text-anchor="middle">800</text>
+    <text x="702" y="94" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">07 Apr</text>
+  </g>
+  <g style="animation: fi 0.35s ease 0.14s both">
+    <rect x="0" y="112" width="720" height="38" fill="#181825"/>
+    <text x="18" y="132" font-family="Segoe UI" font-size="11" fill="#6c7086">3</text>
+    <text x="36" y="132" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[Walking Robot Simulation](https://leetcode.</text>
+    <text x="450" y="132" font-family="Segoe UI" font-size="11" fill="#89b4fa">LeetCode</text>
+    <rect x="552" y="119" width="74" height="19" rx="9" fill="#3a2515"/>
+    <text x="589" y="132" font-family="Segoe UI" font-size="11" fill="#fab387" text-anchor="middle">Medium</text>
+    <text x="702" y="132" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">06 Apr</text>
+  </g>
+  <g style="animation: fi 0.35s ease 0.21s both">
+    <rect x="0" y="150" width="720" height="38" fill="#1e1e2e"/>
+    <text x="18" y="170" font-family="Segoe UI" font-size="11" fill="#6c7086">4</text>
+    <text x="36" y="170" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[3Sum Closest](https://leetcode.com/problems</text>
+    <text x="450" y="170" font-family="Segoe UI" font-size="11" fill="#89b4fa">LeetCode</text>
+    <rect x="552" y="157" width="74" height="19" rx="9" fill="#3a2515"/>
+    <text x="589" y="170" font-family="Segoe UI" font-size="11" fill="#fab387" text-anchor="middle">Medium</text>
+    <text x="702" y="170" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">06 Apr</text>
+  </g>
+  <g style="animation: fi 0.35s ease 0.28s both">
+    <rect x="0" y="188" width="720" height="38" fill="#181825"/>
+    <text x="18" y="208" font-family="Segoe UI" font-size="11" fill="#6c7086">5</text>
+    <text x="36" y="208" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[A. Ambitious Kid](https://codeforces.com/pr</text>
+    <text x="450" y="208" font-family="Segoe UI" font-size="11" fill="#89b4fa">Codeforces</text>
+    <rect x="552" y="195" width="74" height="19" rx="9" fill="#1a3329"/>
+    <text x="589" y="208" font-family="Segoe UI" font-size="11" fill="#a6e3a1" text-anchor="middle">800</text>
+    <text x="702" y="208" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">06 Apr</text>
+  </g>
+  <g style="animation: fi 0.35s ease 0.35s both">
+    <rect x="0" y="226" width="720" height="38" fill="#1e1e2e"/>
+    <text x="18" y="246" font-family="Segoe UI" font-size="11" fill="#6c7086">6</text>
+    <text x="36" y="246" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[Roman to Integer](https://leetcode.com/prob</text>
+    <text x="450" y="246" font-family="Segoe UI" font-size="11" fill="#89b4fa">LeetCode</text>
+    <rect x="552" y="233" width="74" height="19" rx="9" fill="#1a3329"/>
+    <text x="589" y="246" font-family="Segoe UI" font-size="11" fill="#a6e3a1" text-anchor="middle">Easy</text>
+    <text x="702" y="246" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">05 Apr</text>
+  </g>
+  <g style="animation: fi 0.35s ease 0.42s both">
+    <rect x="0" y="264" width="720" height="38" fill="#181825"/>
+    <text x="18" y="284" font-family="Segoe UI" font-size="11" fill="#6c7086">7</text>
+    <text x="36" y="284" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[Integer to Roman](https://leetcode.com/prob</text>
+    <text x="450" y="284" font-family="Segoe UI" font-size="11" fill="#89b4fa">LeetCode</text>
+    <rect x="552" y="271" width="74" height="19" rx="9" fill="#3a2515"/>
+    <text x="589" y="284" font-family="Segoe UI" font-size="11" fill="#fab387" text-anchor="middle">Medium</text>
+    <text x="702" y="284" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">05 Apr</text>
+  </g>
+  <g style="animation: fi 0.35s ease 0.49s both">
+    <rect x="0" y="302" width="720" height="38" fill="#1e1e2e"/>
+    <text x="18" y="322" font-family="Segoe UI" font-size="11" fill="#6c7086">8</text>
+    <text x="36" y="322" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[Longest Consecutive Sequence](https://leetc</text>
+    <text x="450" y="322" font-family="Segoe UI" font-size="11" fill="#89b4fa">LeetCode</text>
+    <rect x="552" y="309" width="74" height="19" rx="9" fill="#3a2515"/>
+    <text x="589" y="322" font-family="Segoe UI" font-size="11" fill="#fab387" text-anchor="middle">Medium</text>
+    <text x="702" y="322" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">05 Apr</text>
+  </g>
+  <g style="animation: fi 0.35s ease 0.56s both">
+    <rect x="0" y="340" width="720" height="38" fill="#181825"/>
+    <text x="18" y="360" font-family="Segoe UI" font-size="11" fill="#6c7086">9</text>
+    <text x="36" y="360" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[C. Target Practice](https://codeforces.com/</text>
+    <text x="450" y="360" font-family="Segoe UI" font-size="11" fill="#89b4fa">Codeforces</text>
+    <rect x="552" y="347" width="74" height="19" rx="9" fill="#1a3329"/>
+    <text x="589" y="360" font-family="Segoe UI" font-size="11" fill="#a6e3a1" text-anchor="middle">800</text>
+    <text x="702" y="360" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">05 Apr</text>
+  </g>
+  <g style="animation: fi 0.35s ease 0.63s both">
+    <rect x="0" y="378" width="720" height="38" fill="#1e1e2e"/>
+    <text x="18" y="398" font-family="Segoe UI" font-size="11" fill="#6c7086">10</text>
+    <text x="36" y="398" font-family="Segoe UI" font-size="12" fill="#cdd6f4">[A. How Much Does Daytona Cost?](https://cod</text>
+    <text x="450" y="398" font-family="Segoe UI" font-size="11" fill="#89b4fa">Codeforces</text>
+    <rect x="552" y="385" width="74" height="19" rx="9" fill="#1a3329"/>
+    <text x="589" y="398" font-family="Segoe UI" font-size="11" fill="#a6e3a1" text-anchor="middle">800</text>
+    <text x="702" y="398" font-family="Segoe UI" font-size="11" fill="#585b70" text-anchor="end">03 Apr</text>
+  </g>
+</svg>
