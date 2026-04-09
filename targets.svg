@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220">
   <defs>
     <style>
-      @keyframes b1 { from{width:0} to{width:53px} }
+      @keyframes b1 { from{width:0} to{width:54px} }
       @keyframes b2 { from{width:0} to{width:134px} }
       @keyframes b3 { from{width:0} to{width:126px} }
       .r1 { animation: b1 1.6s cubic-bezier(.4,0,.2,1) 0.1s both }
@@ -21,7 +21,7 @@
   <rect x="1" y="1" width="718" height="218" rx="14" fill="none" stroke="#313244" stroke-width="1.5"/>
 
   <text x="26" y="36" font-family="Segoe UI" font-size="11" font-weight="700" fill="#a6adc8" letter-spacing="1">STRIVER A2Z SHEET</text>
-  <text x="694" y="36" font-family="Segoe UI" font-size="12" font-weight="700" fill="#cba6f7" text-anchor="end">38 / 455   8.4%</text>
+  <text x="694" y="36" font-family="Segoe UI" font-size="12" font-weight="700" fill="#cba6f7" text-anchor="end">39 / 455   8.6%</text>
   <rect x="26" y="44" width="668" height="12" rx="6" fill="#313244"/>
   <rect x="26" y="44" width="0" height="12" rx="6" fill="url(#g1)" class="r1" filter="url(#glow)"/>
   <text x="26" y="72" font-family="Segoe UI" font-size="10" fill="#45475a">Complete Striver's A2Z DSA Course Sheet — 455 problems total</text>
