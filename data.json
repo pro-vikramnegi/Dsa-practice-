@@ -1,0 +1,88 @@
+{
+    "striver_done": 39,
+    "striver_total": 455,
+    "lc_streak": 70,
+    "last_updated": "10 Apr 2026 | 07:07 PM IST",
+    "recent": [
+        {
+            "Date": "09 Apr",
+            "Problem": "[A. Buttons](https://codeforces.com/problemset/problem/1858/A)",
+            "Platform": "Codeforces",
+            "Difficulty": "800",
+            "Topic": "Math",
+            "Status": "Done"
+        },
+        {
+            "Date": "09 Apr",
+            "Problem": "[Partition Array According to Given Pivot](https://leetcode.com/problems/partition-array-according-to-given-pivot/)",
+            "Platform": "LeetCode",
+            "Difficulty": "Medium",
+            "Topic": "Array",
+            "Status": "Done"
+        },
+        {
+            "Date": "07 Apr",
+            "Problem": "[A. Sequence Game](https://codeforces.com/problemset/problem/1862/A)",
+            "Platform": "Codeforces",
+            "Difficulty": "800",
+            "Topic": "Greedy",
+            "Status": "Done"
+        },
+        {
+            "Date": "07 Apr",
+            "Problem": "[Walking Robot Simulation II](https://leetcode.com/problems/walking-robot-simulation-ii/)",
+            "Platform": "LeetCode",
+            "Difficulty": "Medium",
+            "Topic": "Simulation",
+            "Status": "Done"
+        },
+        {
+            "Date": "06 Apr",
+            "Problem": "[A. Ambitious Kid](https://codeforces.com/problemset/problem/1866/A)",
+            "Platform": "Codeforces",
+            "Difficulty": "800",
+            "Topic": "Math",
+            "Status": "Done"
+        },
+        {
+            "Date": "06 Apr",
+            "Problem": "[3Sum Closest](https://leetcode.com/problems/3sum-closest/)",
+            "Platform": "LeetCode",
+            "Difficulty": "Medium",
+            "Topic": "Two_Pointers",
+            "Status": "Done"
+        },
+        {
+            "Date": "06 Apr",
+            "Problem": "[Walking Robot Simulation](https://leetcode.com/problems/walking-robot-simulation/)",
+            "Platform": "LeetCode",
+            "Difficulty": "Medium",
+            "Topic": "Simulation",
+            "Status": "Done"
+        },
+        {
+            "Date": "05 Apr",
+            "Problem": "[C. Target Practice](https://codeforces.com/problemset/problem/1873/C)",
+            "Platform": "Codeforces",
+            "Difficulty": "800",
+            "Topic": "Matrix",
+            "Status": "Done"
+        },
+        {
+            "Date": "05 Apr",
+            "Problem": "[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)",
+            "Platform": "LeetCode",
+            "Difficulty": "Medium",
+            "Topic": "Array",
+            "Status": "Done"
+        },
+        {
+            "Date": "05 Apr",
+            "Problem": "[Integer to Roman](https://leetcode.com/problems/integer-to-roman/)",
+            "Platform": "LeetCode",
+            "Difficulty": "Medium",
+            "Topic": "String",
+            "Status": "Done"
+        }
+    ]
+}
