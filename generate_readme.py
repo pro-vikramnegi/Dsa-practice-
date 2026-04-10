@@ -10,6 +10,7 @@ GMAIL         = "vikramnegi0021@gmail.com"
 CSV_FILE      = "problems.csv"
 README_FILE   = "README.md"
 
+STRIVER_TOTAL  = 455
 LC_TARGET      = 500
 CF_TARGET      = 1200
 STREAK_TARGET  = 90
@@ -56,9 +57,7 @@ def parse_date(s):
     for fmt in formats:
         try:
             dt = datetime.strptime(s.strip(), fmt)
-            # Fix: "24 Mar" default year 1900 ko 2026 mein badlo
-            if dt.year == 1900:
-                dt = dt.replace(year=2026) 
+            if dt.year == 1900: dt = dt.replace(year=2026) 
             return dt.date()
         except: continue
     return None
@@ -69,22 +68,17 @@ def generate_heatmap_svg(problems):
         dt_val = p.get('Date') or p.get('date')
         d = parse_date(dt_val)
         if d: counts[d] += 1
-    
     today = date.today()
     end_date = today + timedelta(days=((6 - (today.weekday() + 1) % 7)))
     start_date = end_date - timedelta(weeks=24) + timedelta(days=1)
-    
     CELL, GAP, PAD_L, PAD_T = 13, 3, 30, 30
     W, H = PAD_L + 24 * (CELL + GAP) + 14, PAD_T + 7 * (CELL + GAP) + 32
-    
     grid, col, cur = [], [], start_date
     while cur <= end_date:
         col.append(cur)
-        if cur.weekday() == 6:
-            grid.append(col); col = []
+        if cur.weekday() == 6: grid.append(col); col = []
         cur += timedelta(days=1)
     if col: grid.append(col)
-    
     max_c = max(counts.values(), default=1) or 1
     cells = ""
     for ci, wk in enumerate(grid):
@@ -94,42 +88,44 @@ def generate_heatmap_svg(problems):
             else:
                 c = counts.get(d, 0)
                 color = "#161b22" if c == 0 else ("#0e4429" if (c/max_c) < 0.25 else "#006d32" if (c/max_c) < 0.5 else "#26a641" if (c/max_c) < 0.75 else "#39d353")
-            
             x, y = PAD_L + ci*(CELL+GAP), PAD_T + ri*(CELL+GAP)
             if color != "transparent":
                 cells += f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="3" fill="{color}" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{delay}" fill="freeze"/><title>{d}: {counts.get(d,0)} solved</title></rect>\n'
-
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"><rect width="100%" height="100%" rx="12" fill="#0d1117"/><text x="{W//2}" y="17" font-family="monospace" font-size="10" font-weight="700" fill="#3fb950" text-anchor="middle">DSA ACTIVITY // LAST 24 WEEKS</text>{cells}</svg>'
     with open("heatmap.svg", "w", encoding="utf-8") as f: f.write(svg)
 
-def generate_targets_svg(lc_solved, cur_streak):
-    W, H, BAR_X, BAR_MAX = 740, 260, 150, 560
-    lc_pct = min(100, round(lc_solved/LC_TARGET*100, 1))
-    s_pct = min(100, round(cur_streak/STREAK_TARGET*100, 1))
-
-    rows = [
-        ("LEETCODE 500+", f"{lc_solved}/{LC_TARGET}", lc_pct, "#89dceb", 70),
-        ("CODEFORCES", "1200 Target", 20, "#89b4fa", 140),
-        ("STREAK", f"{cur_streak}/{STREAK_TARGET}d", s_pct, "#f9e2af", 210)
-    ]
-    
+def generate_targets_svg(striver_done, lc_solved, cur_streak):
+    W, H, BAR_X, BAR_MAX = 740, 340, 150, 560
+    s_pct, lc_pct, st_pct = min(100, round(striver_done/STRIVER_TOTAL*100, 1)), min(100, round(lc_solved/LC_TARGET*100, 1)), min(100, round(cur_streak/STREAK_TARGET*100, 1))
+    rows = [("STRIVER A2Z", f"{striver_done}/{STRIVER_TOTAL}", s_pct, "#cba6f7", 60), ("LEETCODE 500+", f"{lc_solved}/{LC_TARGET}", lc_pct, "#89dceb", 140), ("CODEFORCES", "1200 Target", 20, "#89b4fa", 220), ("STREAK", f"{cur_streak}/{STREAK_TARGET}d", st_pct, "#f9e2af", 300)]
     bars = ""
     for i, (lab, txt, pct, clr, y) in enumerate(rows):
         bw, delay = max(8, round(pct/100*BAR_MAX)), f"{round(0.3*i, 1)}s"
-        bars += f'<text x="{BAR_X-5}" y="{y-12}" font-family="monospace" font-size="10" font-weight="700" fill="{clr}" text-anchor="end">{lab}</text>'
-        bars += f'<text x="{BAR_X+BAR_MAX}" y="{y-12}" font-family="monospace" font-size="11" font-weight="700" fill="{clr}" text-anchor="end">{txt} ({pct}%)</text>'
-        bars += f'<rect x="{BAR_X}" y="{y}" width="{BAR_MAX}" height="12" rx="6" fill="#1e1e2e"/>'
-        bars += f'<rect x="{BAR_X}" y="{y}" width="0" height="12" rx="6" fill="{clr}"><animate attributeName="width" from="0" to="{bw}" dur="1.4s" begin="{delay}" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1"/></rect>'
-
+        bars += f'<text x="{BAR_X-5}" y="{y-12}" font-family="monospace" font-size="10" font-weight="700" fill="{clr}" text-anchor="end">{lab}</text><text x="{BAR_X+BAR_MAX}" y="{y-12}" font-family="monospace" font-size="11" font-weight="700" fill="{clr}" text-anchor="end">{txt} ({pct}%)</text><rect x="{BAR_X}" y="{y}" width="{BAR_MAX}" height="12" rx="6" fill="#1e1e2e"/><rect x="{BAR_X}" y="{y}" width="0" height="12" rx="6" fill="{clr}"><animate attributeName="width" from="0" to="{bw}" dur="1.4s" begin="{delay}" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1"/></rect>'
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"><rect width="100%" height="100%" rx="14" fill="#11111b"/><text x="{W//2}" y="30" font-family="monospace" font-size="11" font-weight="700" fill="#585b70" text-anchor="middle">// GOALS &amp; TARGETS //</text>{bars}</svg>'
     with open("targets.svg", "w", encoding="utf-8") as f: f.write(svg)
 
+def build_table(problems):
+    today = date.today()
+    cutoff = today - timedelta(days=1) # Last 2 days: Today and Yesterday
+    recent = [p for p in problems if parse_date(p.get('Date')) and parse_date(p.get('Date')) >= cutoff]
+    
+    if not recent: return "> **No activity logged in the last 48 hours.** Keep grinding! 🚀"
+    
+    rows = "| # | Problem | Platform | Difficulty | Date |\n|:---:|:---|:---:|:---:|:---:|\n"
+    for i, p in enumerate(reversed(recent), 1):
+        diff = p.get('Difficulty', 'N/A')
+        color = "green" if diff == 'Easy' or diff == '800' else "orange" if diff == 'Medium' else "red"
+        rows += f"| {i} | {p.get('Problem')} | `{p.get('Platform')}` | <font color='{color}'>**{diff}**</font> | `{p.get('Date')}` |\n"
+    return rows
+
 def main():
     problems = read_csv()
-    lc = fetch_leetcode_stats()
-    streak = max(fetch_leetcode_streak(), FALLBACK_STREAK)
+    lc, streak = fetch_leetcode_stats(), max(fetch_leetcode_streak(), FALLBACK_STREAK)
     generate_heatmap_svg(problems)
-    generate_targets_svg(lc['total'], streak)
+    generate_targets_svg(len(problems), lc['total'], streak)
+    
+    table_md = build_table(problems)
     now = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%d %b %Y | %I:%M %p IST")
     header = f"https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:0d1117&height=230&section=header&text=DSA%20FORGE%20v4&fontSize=78&fontColor=58a6ff&animation=twinkling&desc=Vikram%20Negi%20%7C%20Code%20.%20Survive%20.%20Win&descSize=18"
     
@@ -143,11 +139,12 @@ def main():
         f'<img src="https://github-readme-stats.vercel.app/api?username={GITHUB_USER}&show_icons=true&theme=tokyonight&hide_border=true" height="170" />&nbsp;',
         f'<img src="https://github-readme-streak-stats.herokuapp.com/?user={GITHUB_USER}&theme=tokyonight&hide_border=true" height="170" />\n</div>\n\n',
         f'---\n\n## Activity Flow\n<div align="center"><img src="https://github-readme-activity-graph.vercel.app/graph?username={GITHUB_USER}&bg_color=0d1117&color=58a6ff&line=1f6feb&point=58a6ff&area=true&hide_border=true" width="100%" /></div>\n\n',
-        f'---\n\n## LeetCode Stats\n<div align="center"><img src="https://leetcard.jacoblin.cool/{LEETCODE_USER}?theme=dark&font=Karma&ext=heatmap&border=0&radius=12" width="96%" /></div>\n\n',
         '---\n\n## DSA Heatmap\n<div align="center"><img src="heatmap.svg" width="100%" /></div>\n\n',
         '---\n\n## Goals & Targets\n<div align="center"><img src="targets.svg" width="100%" /></div>\n\n',
+        f'---\n\n## Recent Activity (Last 2 Days)\n\n{table_md}\n\n',
         f'---\n<div align="center">`Last Sync : {now}`</div>'
     ]
     with open(README_FILE, "w", encoding="utf-8") as f: f.write("".join(content))
 
 if __name__ == "__main__": main()
+    
