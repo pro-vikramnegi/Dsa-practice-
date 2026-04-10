@@ -22,11 +22,6 @@
 
 ---
 
-## LeetCode Stats
-<div align="center"><img src="https://leetcard.jacoblin.cool/__vikram21?theme=dark&font=Karma&ext=heatmap&border=0&radius=12" width="96%" /></div>
-
----
-
 ## DSA Heatmap
 <div align="center"><img src="heatmap.svg" width="100%" /></div>
 
@@ -36,4 +31,17 @@
 <div align="center"><img src="targets.svg" width="100%" /></div>
 
 ---
-<div align="center">`Last Sync : 10 Apr 2026 | 08:55 PM IST`</div>
+
+## Recent Activity (Last 2 Days)
+
+| # | Problem | Platform | Difficulty | Date |
+|:---:|:---|:---:|:---:|:---:|
+| 1 | [3140. Minimum Operations to Make Binary Array Elements Equal to One I](https://leetcode.com/problems/minimum-operations-to-make-binary-array-elements-equal-to-one-i/) | `LeetCode` | <font color='orange'>**Medium**</font> | `10 Apr` |
+| 2 | [A. Special Characters](https://codeforces.com/problemset/problem/1948/A) | `Codeforces` | <font color='green'>**800**</font> | `10 Apr` |
+| 3 | [A. Setting up Camp](https://codeforces.com/problemset/problem/1945/A) | `Codeforces` | <font color='green'>**800**</font> | `10 Apr` |
+| 4 | [A. Buttons](https://codeforces.com/problemset/problem/1858/A) | `Codeforces` | <font color='green'>**800**</font> | `09 Apr` |
+| 5 | [Partition Array According to Given Pivot](https://leetcode.com/problems/partition-array-according-to-given-pivot/) | `LeetCode` | <font color='orange'>**Medium**</font> | `09 Apr` |
+
+
+---
+<div align="center">`Last Sync : 10 Apr 2026 | 09:02 PM IST`</div>
