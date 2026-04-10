@@ -35,20 +35,24 @@ def fetch_leetcode_streak():
         req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0", "Referer": "https://leetcode.com"})
         with urllib.request.urlopen(req, timeout=12) as r:
             data = json.loads(r.read())
-        return int(data["data"]["matchedUser"]["userCalendar"]["streak"])
+        s = int(data["data"]["matchedUser"]["userCalendar"]["streak"])
+        print(f"[OK] LC Streak: {s}")
+        return s
     except: return 0
 
 def read_csv():
     rows = []
-    if not os.path.exists(CSV_FILE): return []
+    if not os.path.exists(CSV_FILE): 
+        print(f"[ERR] {CSV_FILE} not found!")
+        return []
     try:
         with open(CSV_FILE, newline='', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for r in reader:
-                # Flexible column detection for Date
                 clean_r = {str(k).strip(): str(v).strip() for k, v in r.items() if k}
                 if any(clean_r.values()): rows.append(clean_r)
-    except: pass
+        print(f"[OK] Read {len(rows)} problems from CSV.")
+    except Exception as e: print(f"[ERR] CSV: {e}")
     return rows
 
 def parse_date(s):
@@ -61,11 +65,19 @@ def parse_date(s):
 def generate_heatmap_svg(problems):
     counts = defaultdict(int)
     for p in problems:
-        # Check for any column that looks like 'Date'
-        dt_val = p.get('Date') or p.get('date') or p.get('DATE')
+        # Aggressive Date Column Detection
+        dt_val = None
+        for key in p.keys():
+            if 'date' in key.lower():
+                dt_val = p[key]
+                break
+        
         d = parse_date(dt_val)
         if d: counts[d] += 1
     
+    if not counts: print("[WARN] No valid dates found for Heatmap!")
+    else: print(f"[OK] Heatmap found {len(counts)} active days.")
+
     today = date.today()
     end_date = today + timedelta(days=((6 - (today.weekday() + 1) % 7)))
     start_date = end_date - timedelta(weeks=24) + timedelta(days=1)
@@ -99,7 +111,6 @@ def generate_targets_svg(lc_solved, cur_streak):
     lc_pct = min(100, round(lc_solved/LC_TARGET*100, 1))
     s_pct = min(100, round(cur_streak/STREAK_TARGET*100, 1))
 
-    # Striver removed from here
     rows = [
         ("LEETCODE 500+", f"{lc_solved}/{LC_TARGET}", lc_pct, "#89dceb", 70),
         ("CODEFORCES", "1200 Target", 20, "#89b4fa", 140),
