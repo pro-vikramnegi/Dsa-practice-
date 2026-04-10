@@ -1,37 +1,29 @@
-name: DSA Forge — Auto Sync
+name: DSA Dashboard Sync
 
 on:
   push:
     paths:
       - "problems.csv"
-  workflow_dispatch:          # manual trigger from GitHub UI
+  workflow_dispatch:
   schedule:
-    - cron: "30 18 * * *"    # daily at 00:00 IST (18:30 UTC)
-
-permissions:
-  contents: write
+    - cron: "0 19 * * *" # Daily sync
 
 jobs:
-  sync:
+  update:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
-      - name: Run generate_readme.py
-        run: python generate_readme.py
-
-      - name: Commit & push updated files
+      - name: Run Generator
+        run: python generate_data.py
+      - name: Commit & Push
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md heatmap.svg targets.svg
-          git diff --cached --quiet || git commit -m "chore: auto-sync DSA stats [skip ci]"
-          git push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet || (git commit -m "update: dashboard data" && git push)
           
