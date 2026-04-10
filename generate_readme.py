@@ -10,7 +10,6 @@ GMAIL         = "vikramnegi0021@gmail.com"
 CSV_FILE      = "problems.csv"
 README_FILE   = "README.md"
 
-STRIVER_TOTAL  = 455
 LC_TARGET      = 500
 CF_TARGET      = 1200
 STREAK_TARGET  = 90
@@ -24,14 +23,9 @@ def fetch_leetcode_stats():
         with urllib.request.urlopen(req, timeout=12) as r:
             d = json.loads(r.read())
         if d.get("status") == "success":
-            return {
-                "total": d.get("totalSolved", 0),
-                "easy": d.get("easySolved", 0),
-                "medium": d.get("mediumSolved", 0),
-                "hard": d.get("hardSolved", 0),
-            }
+            return {"total": d.get("totalSolved", 0), "easy": d.get("easySolved", 0), "medium": d.get("mediumSolved", 0)}
     except: pass
-    return {"total": 109, "easy": 64, "medium": 45, "hard": 0}
+    return {"total": 109, "easy": 64, "medium": 45}
 
 def fetch_leetcode_streak():
     url = "https://leetcode.com/graphql"
@@ -46,28 +40,30 @@ def fetch_leetcode_streak():
 
 def read_csv():
     rows = []
+    if not os.path.exists(CSV_FILE): return []
     try:
-        if os.path.exists(CSV_FILE):
-            with open(CSV_FILE, newline='', encoding='utf-8') as f:
-                reader = csv.DictReader(f)
-                for r in reader:
-                    if any(r.values()):
-                        rows.append({str(k).strip(): str(v).strip() for k, v in r.items() if k})
+        with open(CSV_FILE, newline='', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for r in reader:
+                # Flexible column detection for Date
+                clean_r = {str(k).strip(): str(v).strip() for k, v in r.items() if k}
+                if any(clean_r.values()): rows.append(clean_r)
     except: pass
     return rows
 
 def parse_date(s):
     if not s: return None
     for fmt in ["%Y-%m-%d", "%d %b %Y", "%d %b", "%d-%m-%Y", "%b %d, %Y"]:
-        try:
-            return datetime.strptime(s.strip(), fmt).date()
+        try: return datetime.strptime(s.strip(), fmt).date()
         except: continue
     return None
 
 def generate_heatmap_svg(problems):
     counts = defaultdict(int)
     for p in problems:
-        d = parse_date(p.get("Date", ""))
+        # Check for any column that looks like 'Date'
+        dt_val = p.get('Date') or p.get('date') or p.get('DATE')
+        d = parse_date(dt_val)
         if d: counts[d] += 1
     
     today = date.today()
@@ -86,33 +82,28 @@ def generate_heatmap_svg(problems):
     if col: grid.append(col)
     
     max_c = max(counts.values(), default=1) or 1
-    def get_col(c):
-        if c == 0: return "#161b22"
-        t = c / max_c
-        return "#0e4429" if t < 0.25 else "#006d32" if t < 0.5 else "#26a641" if t < 0.75 else "#39d353"
-
     cells = ""
     for ci, wk in enumerate(grid):
         delay = f"{round(0.02 * ci, 3)}s"
         for ri, d in enumerate(wk):
             if d > today: continue
             x, y, c = PAD_L + ci*(CELL+GAP), PAD_T + ri*(CELL+GAP), counts.get(d, 0)
-            cells += f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="3" fill="{get_col(c)}" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{delay}" fill="freeze"/><title>{d}: {c} solved</title></rect>\n'
+            color = "#161b22" if c == 0 else ("#0e4429" if (c/max_c) < 0.25 else "#006d32" if (c/max_c) < 0.5 else "#26a641" if (c/max_c) < 0.75 else "#39d353")
+            cells += f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="3" fill="{color}" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{delay}" fill="freeze"/><title>{d}: {c} solved</title></rect>\n'
 
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"><rect width="100%" height="100%" rx="12" fill="#0d1117"/><text x="{W//2}" y="17" font-family="monospace" font-size="10" fill="#3fb950" text-anchor="middle">DSA ACTIVITY // LAST 24 WEEKS</text>{cells}</svg>'
     with open("heatmap.svg", "w", encoding="utf-8") as f: f.write(svg)
 
-def generate_targets_svg(total, lc_solved, cur_streak):
-    W, H, BAR_X, BAR_MAX = 740, 340, 150, 560
-    striver_pct = min(100, round(total/STRIVER_TOTAL*100, 1))
+def generate_targets_svg(lc_solved, cur_streak):
+    W, H, BAR_X, BAR_MAX = 740, 260, 150, 560
     lc_pct = min(100, round(lc_solved/LC_TARGET*100, 1))
     s_pct = min(100, round(cur_streak/STREAK_TARGET*100, 1))
 
+    # Striver removed from here
     rows = [
-        ("STRIVER A2Z", f"{total}/{STRIVER_TOTAL}", striver_pct, "#cba6f7", 60),
-        ("LEETCODE 500+", f"{lc_solved}/{LC_TARGET}", lc_pct, "#89dceb", 140),
-        ("CODEFORCES", "1200 Target", 20, "#89b4fa", 220),
-        ("STREAK", f"{cur_streak}/{STREAK_TARGET}d", s_pct, "#f9e2af", 300)
+        ("LEETCODE 500+", f"{lc_solved}/{LC_TARGET}", lc_pct, "#89dceb", 70),
+        ("CODEFORCES", "1200 Target", 20, "#89b4fa", 140),
+        ("STREAK", f"{cur_streak}/{STREAK_TARGET}d", s_pct, "#f9e2af", 210)
     ]
     
     bars = ""
@@ -130,13 +121,11 @@ def main():
     problems = read_csv()
     lc = fetch_leetcode_stats()
     streak = max(fetch_leetcode_streak(), FALLBACK_STREAK)
-    total = len(problems)
-
+    
     generate_heatmap_svg(problems)
-    generate_targets_svg(total, lc['total'], streak)
+    generate_targets_svg(lc['total'], streak)
 
     now = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime("%d %b %Y | %I:%M %p IST")
-    
     header = f"https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:0d1117&height=230&section=header&text=DSA%20FORGE%20v4&fontSize=78&fontColor=58a6ff&animation=twinkling&desc=Vikram%20Negi%20%7C%20Code%20.%20Survive%20.%20Win&descSize=18"
     
     content = [
