@@ -43,3 +43,6 @@ Date,Problem,Platform,Difficulty,Topic,Status
 10 Apr,"[3140. Minimum Operations to Make Binary Array Elements Equal to One I](https://leetcode.com/problems/minimum-operations-to-make-binary-array-elements-equal-to-one-i/)",LeetCode,Medium,Array,Done
 11 Apr,"[Flipping an Image](https://leetcode.com/problems/flipping-an-image/)",LeetCode,Easy,Array,Done
 11 Apr,"[Minimum Distance Between Three Equal Elements I](https://leetcode.com/problems/problems/minimum-distance-between-three-equal-elements-i/)",LeetCode,Easy,Array,Done
+12 Apr,"[Diagonal Traverse](https://leetcode.com/problems/diagonal-traverse/)",LeetCode,Medium,Matrix,Done
+12 Apr,"[Sort the Matrix Diagonally](https://leetcode.com/problems/sort-the-matrix-diagonally/)",LeetCode,Medium,Matrix,Done
+12 Apr,"[A. Forbidden Integer](https://codeforces.com/problemset/problem/1845/A)",Codeforces,800,Greedy,Done
