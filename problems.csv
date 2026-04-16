@@ -49,4 +49,6 @@ Date,Problem,Platform,Difficulty,Topic,Status
 13 Apr,"[Minimum Distance to the Target Element](https://leetcode.com/problems/minimum-distance-to-the-target-element/)",LeetCode,Easy,Array,Done
 13 Apr,"[A. Grasshopper on a Line](https://codeforces.com/problemset/problem/1843/A)",Codeforces,800,Math,Done
 14 Apr,"[A. Unit Array](https://codeforces.com/problemset/problem/1834/A)",Codeforces,800,Math,Done
-
+16 Apr,"[Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)",LeetCode,Medium,Backtracking,Done
+16 Apr,"[Closest Equal Element Queries](https://leetcode.com/problems/closest-equal-element-queries/)",LeetCode,Medium,Array,Done
+16 Apr,"[A. Coins](https://codeforces.com/problemset/problem/1814/A)",Codeforces,800,Math,Done
