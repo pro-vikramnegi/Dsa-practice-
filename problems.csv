@@ -1,3 +1,4 @@
+
 Date,Problem,Platform,Difficulty,Topic,Status
 24 Mar,"[Rearrange Array by Sign](https://leetcode.com/problems/rearrange-array-elements-by-sign/)",LeetCode,Medium,Array,Done
 25 Mar,"[Can Partition Grid](https://leetcode.com/problems/can-partition-grid/)",LeetCode,Medium,Matrix,Done
@@ -52,3 +53,5 @@ Date,Problem,Platform,Difficulty,Topic,Status
 16 Apr,"[Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)",LeetCode,Medium,Backtracking,Done
 16 Apr,"[Closest Equal Element Queries](https://leetcode.com/problems/closest-equal-element-queries/)",LeetCode,Medium,Array,Done
 16 Apr,"[A. Coins](https://codeforces.com/problemset/problem/1814/A)",Codeforces,800,Math,Done
+17 Apr,"[Minimum Absolute Distance Between Mirror Pairs](https://leetcode.com/problems/minimum-absolute-distance-between-mirror-pairs/)",LeetCode,Medium,Hash Map,Solved
+17 Apr,"[Walking Master](https://codeforces.com/problemset/problem/1806/A)",Codeforces,Easy,Math/Greedy,Solved
