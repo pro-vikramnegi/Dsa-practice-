@@ -55,3 +55,5 @@ Date,Problem,Platform,Difficulty,Topic,Status
 16 Apr,"[A. Coins](https://codeforces.com/problemset/problem/1814/A)",Codeforces,800,Math,Done
 17 Apr,"[Minimum Absolute Distance Between Mirror Pairs](https://leetcode.com/problems/minimum-absolute-distance-between-mirror-pairs/)",LeetCode,Medium,Hash Map,Solved
 17 Apr,"[Walking Master](https://codeforces.com/problemset/problem/1806/A)",Codeforces,Easy,Math/Greedy,Solved
+19 Apr,"[Maximum Distance Between a Pair of Values](https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/)",LeetCode,Medium,Two Pointers/Binary Search,Solved
+19 Apr,"[Make it Beautiful](https://codeforces.com/problemset/problem/1783/A)",Codeforces,Easy,Greedy,Solved
